@@ -1,5 +1,11 @@
 # Muhammad Saqlain — Portfolio
 
+My personal portfolio site, live at **[muhammadsaqlain.net](https://muhammadsaqlain.net)**.
+
+React + Vite + TypeScript. Dark/light mode, responsive mobile layout, smooth scroll animations, resume download. Content is kept honest — real skills, real projects, no inflated claims. Deployed on Vercel.
+
+---
+
 A structured, responsive React + TypeScript portfolio with subtle motion, real project descriptions, a custom favicon, SEO metadata, and basic deployment security headers.
 
 ## Requirements
