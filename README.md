@@ -88,12 +88,12 @@ This is a static site — `npm run build` outputs everything into `dist/`.
 1. Push this folder to a GitHub repository.
 2. Go to vercel.com → Add New → Project → import the repo.
 3. Build command `npm run build`, output directory `dist` (already set in `vercel.json`).
-4. After deploy, uncomment the `og:url` / `og:image` lines in `index.html` and set your real domain, then redeploy.
+4. Social preview (`og:url` / `og:image`) is already configured for https://muhammadsaqlain.net — update the domain in `index.html` if you ever change it, then redeploy.
 
 **Option B — any static host (Netlify, Cloudflare Pages, GitHub Pages):**
 1. Run `npm run build`.
 2. Upload the contents of `dist/` to the host.
-3. Same `index.html` note about `og:url` / `og:image` applies.
+3. Social preview is already configured (see Option A step 4).
 
 ## Security notes
 

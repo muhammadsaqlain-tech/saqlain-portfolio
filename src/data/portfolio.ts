@@ -38,7 +38,7 @@ export const profile = {
   lastName: "Saqlain",
   role: "Linux & Python Learner · Aspiring IT Support / Cloud Security Trainee",
   email: "muhammadsaqlain4787@gmail.com",
-  location: "Jaranwala, Pakistan",
+  location: "Faisalabad, Pakistan",
   github: "",
   linkedin: "https://linkedin.com/in/muhammadsaqlain-tech",
   availability: "Available for remote internships",
