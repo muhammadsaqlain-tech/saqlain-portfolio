@@ -1,5 +1,5 @@
-import { useState, type MouseEvent } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { useState } from "react";
+import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import SectionHeading from "./SectionHeading";
 import { FaGlobe } from "react-icons/fa"; // only for "Networking" — no brand logo exists for it
 import { skills, type Skill } from "../data/portfolio";
@@ -58,17 +58,8 @@ function SkillIcon({ icon }: { icon: Skill["icon"] }) {
 
 export default function Skills() {
   const [selected, setSelected] = useState<(typeof categories)[number]>("All");
+  const reduce = useReducedMotion();
   const visible = skills.filter((skill) => selected === "All" || skill.category === selected);
-
-  // Spotlight: each card stores the cursor position in CSS vars so a soft
-  // radial glow can follow the pointer. Delegated on the container — one listener.
-  function handleSpotlight(event: MouseEvent<HTMLDivElement>) {
-    const card = (event.target as HTMLElement).closest(".skill-card") as HTMLElement | null;
-    if (!card) return;
-    const box = card.getBoundingClientRect();
-    card.style.setProperty("--mx", `${event.clientX - box.left}px`);
-    card.style.setProperty("--my", `${event.clientY - box.top}px`);
-  }
 
   return (
     <section className="section-shell section-dark" id="skills">
@@ -82,14 +73,14 @@ export default function Skills() {
           </div>
           <span className="skill-count">{String(visible.length).padStart(2, "0")} technologies / topics</span>
         </div>
-        <motion.div layout className="skills-grid" onMouseMove={handleSpotlight}>
+        <motion.div layout={!reduce} className="skills-grid">
           <AnimatePresence mode="popLayout">
             {visible.map((skill, index) => (
-              <motion.article className="skill-card" key={skill.name} layout
-                initial={{ opacity: 0, y: 12, scale: 0.98 }}
+              <motion.article className="skill-card" key={skill.name} layout={!reduce}
+                initial={reduce ? false : { opacity: 0, y: 12, scale: 0.98 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                transition={{ duration: 0.22, delay: Math.min(index * 0.025, 0.18) }}>
+                exit={reduce ? { opacity: 0 } : { opacity: 0, y: 8, scale: 0.98 }}
+                transition={{ duration: 0.22, delay: reduce ? 0 : Math.min(index * 0.025, 0.18) }}>
                 <span className={`skill-mark skill-mark-${skill.icon}`} aria-hidden="true">
                   <SkillIcon icon={skill.icon} />
                 </span>

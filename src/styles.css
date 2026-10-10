@@ -152,19 +152,20 @@ img { display: block; max-width: 100%; }
 .filter-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
 .filter-tab { padding: 9px 13px; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--muted); cursor: pointer; font-size: .78rem; font-weight: 700; transition: all .2s; }
 .filter-tab:hover { border-color: var(--accent); color: var(--ink); }
+.filter-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .filter-tab.selected { background: var(--accent-strong); border-color: var(--accent-strong); color: #fff; }
 .skill-count { color: var(--faint); font-size: .76rem; white-space: nowrap; }
 .skills-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 15px; }
-.skill-card { position: relative; display: flex; gap: 14px; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); transition: border-color .2s, transform .2s; }
-.skill-card:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); transform: translateY(-3px); }
-.skill-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--accent) 12%, transparent), transparent 65%); opacity: 0; transition: opacity .3s ease; pointer-events: none; }
-.skill-card:hover::before { opacity: 1; }
+.skill-card { position: relative; display: flex; gap: 14px; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); transition: border-color .18s ease, transform .18s ease, background-color .18s ease; }
+.skill-card:hover { border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); background-color: var(--panel-2); transform: translateY(-2px); }
 .skill-mark { display: grid; place-items: center; width: 54px; height: 54px; flex: 0 0 54px; padding: 8px; border: 1px solid var(--line); border-radius: 13px; color: var(--accent); background: var(--accent-soft); }
 .skill-mark svg, .skill-mark img { width: 30px; height: 30px; display: block; }
-.skill-card-body { min-width: 0; }
-.skill-card-body h3 { margin: 1px 0 4px; font: 700 .95rem var(--display); }
-.skill-card-body p { margin: 0 0 11px; color: var(--muted); font-size: .78rem; line-height: 1.45; }
-.skill-badge { display: inline-flex; align-items: center; gap: 7px; padding: 4px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .66rem; font-weight: 700; white-space: nowrap; }
+/* Dark brand marks (Bash, Linux, AWS) need a light container to stay legible on the dark theme */
+.skill-mark-bash, .skill-mark-linux, .skill-mark-aws { background: #e9eef6; border-color: rgba(21, 32, 51, .16); }
+.skill-card-body { display: flex; flex-direction: column; min-width: 0; flex: 1 1 auto; }
+.skill-card-body h3 { margin: 1px 0 4px; font: 700 .95rem var(--display); letter-spacing: -.01em; }
+.skill-card-body p { margin: 0 0 12px; color: var(--muted); font-size: .78rem; line-height: 1.5; flex: 1 1 auto; }
+.skill-badge { display: inline-flex; align-items: center; gap: 7px; align-self: flex-start; margin-top: auto; padding: 4px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .66rem; font-weight: 700; white-space: nowrap; }
 .skill-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: #34d399; }
 .skill-badge.learning { color: var(--warm); border-color: color-mix(in srgb, var(--warm) 35%, var(--line)); }
 .skill-badge.learning .dot { background: #fbbf24; }
@@ -413,6 +414,8 @@ a.contact-detail:hover .contact-detail-arrow { transform: translate(3px, -3px); 
   .orb, .terminal-scan, .marquee-track { animation: none !important; }
   .terminal-cursor::after { animation: none !important; opacity: 1; }
   .mask-inner { transform: none !important; }
+  .skill-card, .filter-tab { transition: none !important; }
+  .skill-card:hover { transform: none; }
 }
 
 @media (max-width: 720px) {
