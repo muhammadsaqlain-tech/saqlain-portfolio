@@ -87,9 +87,11 @@ export default function Skills() {
                 <span className="skill-card-body">
                   <h3>{skill.name}</h3>
                   <p>{skill.detail}</p>
-                  <span className={skill.category === "Currently Learning" ? "skill-badge learning" : "skill-badge"}>
-                    <i className="dot" aria-hidden="true" />{skill.category === "Currently Learning" ? "Learning" : "In toolkit"}
-                  </span>
+                  {skill.category === "Currently Learning" && (
+                    <span className="skill-badge learning">
+                      <i className="dot" aria-hidden="true" />Learning
+                    </span>
+                  )}
                 </span>
               </motion.article>
             ))}
