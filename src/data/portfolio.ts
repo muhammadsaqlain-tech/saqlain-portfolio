@@ -102,14 +102,14 @@ export const journey = [
   {
     title: "Undergraduate student",
     organization: "University of Agriculture, Faisalabad",
-    period: "2023 — Present",
+    period: "2024 — Present",
     status: "Currently enrolled",
     detail: "Coursework and independent practice alongside personal projects.",
   },
   {
     title: "Personal projects",
     organization: "PhishGuard · FastFoodPOS · security assessments",
-    period: "Ongoing",
+    period: "2025-2026",
     status: "Hands-on learning",
     detail: "Building, testing, documenting, and improving practical tools.",
   },
