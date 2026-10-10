@@ -222,16 +222,16 @@ img { display: block; max-width: 100%; }
 .terminal-warning { color: #f4c27c; }
 .terminal-content small { display: block; margin-top: 15px; color: #60738e; font: .66rem var(--body); }
 .project-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
-.project-card { display: flex; flex-direction: column; min-height: 315px; padding: 23px; border: 1px solid var(--line); border-radius: 17px; background: var(--panel); transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease; }
+.project-card { display: flex; flex-direction: column; padding: 18px; border: 1px solid var(--line); border-radius: 17px; background: var(--panel); transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease; }
 .project-card:hover { transform: translateY(-5px); border-color: var(--line-strong); box-shadow: var(--shadow); }
-.project-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 21px; }
+.project-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
 .project-icon { display: grid; place-items: center; width: 43px; height: 43px; border: 1px solid var(--line); border-radius: 12px; color: var(--accent); background: var(--accent-soft); font-size: 1.18rem; }
 .project-number { color: var(--faint); font: italic .9rem var(--display); }
-.project-card h3 { margin: 0 0 9px; font: 800 1.13rem var(--display); letter-spacing: -.03em; }
-.project-card > p { margin: 0 0 16px; color: var(--muted); font-size: .85rem; flex: 1; }
+.project-card h3 { margin: 0 0 7px; font: 800 1.0rem var(--display); letter-spacing: -.03em; }
+.project-card > p { margin: 0 0 12px; color: var(--muted); font-size: .78rem; flex: 1; }
 .project-note { color: var(--warm); font-size: .72rem; margin: -5px 0 13px; }
 .project-card .tag-row { margin-top: auto; }
-.project-card-bottom { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--faint); font-size: .7rem; }
+.project-card-bottom { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--line); color: var(--faint); font-size: .7rem; }
 .project-arrow { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-size: 1rem; }
 .projects-footnote { display: flex; align-items: flex-start; gap: 10px; margin: 22px 0 0; color: var(--faint); font-size: .77rem; }
 .projects-footnote svg { flex: 0 0 auto; margin-top: 4px; color: var(--accent); }
@@ -384,7 +384,7 @@ a.contact-detail:hover .contact-detail-arrow { transform: translate(3px, -3px); 
 
 
 /* Project cover art — abstract and decorative, never a fake screenshot */
-.project-visual { position: relative; height: 128px; margin: -23px -23px 18px; overflow: hidden; border-radius: 12px; border: 1px solid var(--line); }
+.project-visual { position: relative; height: 100px; margin: -18px -18px 14px; overflow: hidden; border-radius: 12px; border: 1px solid var(--line); }
 .project-visual::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255, 255, 255, .13) 1px, transparent 1px); background-size: 18px 18px; }
 .pv-icon { position: absolute; right: 16px; bottom: -22px; font-size: 7.5rem; line-height: 1; color: rgba(255, 255, 255, .3); transform: rotate(-8deg); transition: transform .35s ease, color .35s ease; }
 .project-card:hover .pv-icon { transform: rotate(-3deg) scale(1.07); color: rgba(255, 255, 255, .45); }
