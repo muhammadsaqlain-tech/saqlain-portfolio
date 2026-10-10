@@ -97,7 +97,7 @@ export const projects: Project[] = [
     number: "02",
     name: "FastFoodPOS",
     description:
-      "A native Windows restaurant point-of-sale and management application covering order billing, menu and inventory tracking, and sales reporting against a SQL Server backend. Relational schema modeled in-house, business logic kept separate from the Windows Forms UI.",
+      "Windows restaurant POS and management app — order billing, menu and inventory tracking, and sales reporting on a SQL Server backend.",
     tags: ["C#", ".NET 8", "WinForms", "SQL Server"],
     visual: "pos",
   },
@@ -105,14 +105,14 @@ export const projects: Project[] = [
     number: "03",
     name: "Student Management System",
     description:
-      "A database-backed system for managing student records, course enrolment and results, with input validation to protect data integrity. Full create, read, update and delete workflows plus tabular reporting over a normalized relational schema.",
+      "Database-backed system for student records, course enrolment and results — full CRUD workflows and tabular reporting.",
     tags: ["C#", ".NET WinForms", "SQL Server"],
   },
   {
     number: "04",
     name: "Web Application Security Assessments",
     description:
-      "Authorized, passive, read-only assessments of live web applications. Enumerated application stacks and identified missing security headers and HTTPS misconfigurations using non-intrusive reconnaissance only, then delivered prioritised remediation reports with concrete fix guidance.",
+      "Authorized, passive assessments of live web apps — stack enumeration, security header and HTTPS findings, plus remediation reports.",
     tags: ["Reconnaissance", "Report Writing", "Remediation"],
     note: "Authorized, passive assessment work",
     visual: "audit",
@@ -121,7 +121,7 @@ export const projects: Project[] = [
     number: "05",
     name: "Personal Finance Management System",
     description:
-      "An income and expense tracker with category-wise budgeting, monthly summaries, and persistent transaction history. Reporting views aggregate spending by category and period to highlight budget overruns at a glance.",
+      "Income and expense tracker with category-wise budgeting, monthly summaries, and spending reports.",
     tags: ["C#", ".NET WinForms", "SQL Server"],
   },
 ];
