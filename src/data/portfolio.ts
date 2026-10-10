@@ -57,13 +57,13 @@ export const certifications: Certification[] = [
     issuer: "Google",
     title: "Technical Support Fundamentals",
     year: "2026",
-    url: "https://coursera.org/share/80f6cb6efac86039d36dc8572efe8a6e",
+    url: "https://coursera.org/verify/YG0T0H0NZ019",
   },
   {
     issuer: "Johns Hopkins University",
     title: "HTML, CSS & JavaScript for Web Developers",
     year: "2026",
-    url: "https://coursera.org/share/030fba57ebb2a8704ea4e7ca2611d064",
+    url: "https://coursera.org/verify/5JKNPKEJ7MOV",
   },
 ];
 
