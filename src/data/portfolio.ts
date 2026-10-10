@@ -29,7 +29,7 @@ export type Project = {
   href?: string;
   // Picks the decorative cover art for the card. Purely illustrative —
   // never a fake screenshot. Keep the set small and intentional.
-  visual?: "pos" | "audit" | "sites";
+  visual?: "pos" | "audit" | "sites" | "student" | "finance";
 };
 
 export const profile = {
@@ -107,6 +107,7 @@ export const projects: Project[] = [
     description:
       "Database-backed system for student records, course enrolment and results — full CRUD workflows and tabular reporting.",
     tags: ["C#", ".NET WinForms", "SQL Server"],
+    visual: "student",
   },
   {
     number: "04",
@@ -123,6 +124,7 @@ export const projects: Project[] = [
     description:
       "Income and expense tracker with category-wise budgeting, monthly summaries, and spending reports.",
     tags: ["C#", ".NET WinForms", "SQL Server"],
+    visual: "finance",
   },
 ];
 

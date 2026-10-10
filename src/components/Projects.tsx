@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { FiArrowUpRight, FiLayout, FiShield, FiShoppingCart } from "react-icons/fi";
+import { FiArrowUpRight, FiLayout, FiShield, FiShoppingCart, FiBookOpen, FiPieChart } from "react-icons/fi";
 import SectionHeading from "./SectionHeading";
 import { projects } from "../data/portfolio";
 
@@ -8,6 +8,8 @@ const visualIcons = {
   pos: <FiShoppingCart />,
   audit: <FiShield />,
   sites: <FiLayout />,
+  student: <FiBookOpen />,
+  finance: <FiPieChart />,
 } as const;
 
 export default function Projects() {

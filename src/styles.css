@@ -391,6 +391,8 @@ a.contact-detail:hover .contact-detail-arrow { transform: translate(3px, -3px); 
 .pv-pos { background: linear-gradient(135deg, #2b1407, #8a3b0e 55%, #d97a1f); }
 .pv-audit { background: linear-gradient(135deg, #0a1730, #1e40af 55%, #60a5fa); }
 .pv-sites { background: linear-gradient(135deg, #032a2c, #0e7490 55%, #2dd4bf); }
+.pv-student { background: linear-gradient(135deg, #101a2e, #4c1d95 55%, #a78bfa); }
+.pv-finance { background: linear-gradient(135deg, #0b2417, #166534 55%, #4ade80); }
 
 /* Featured terminal: slow scanline sweep + blinking cursor */
 .terminal-card { position: relative; }
