@@ -88,35 +88,41 @@ export const projects: Project[] = [
     number: "01",
     name: "PhishGuard",
     description:
-      "A static phishing-file analyzer for inspecting suspicious files without executing them. Includes file hashes, magic-byte sniffing, PDF indicators, and hash lookups through MalwareBazaar.",
-    tags: ["Python", "Static Analysis", "MalwareBazaar API", "PDF Reports"],
-    note: "Featured project",
+      "A static file-intelligence toolkit that computes SHA-256, MD5 and SHA-1 hashes, identifies true file types by magic-byte signature rather than extension, and surfaces threat indicators inside PDF documents. Reports only what it can verify — findings export as a PDF analyst report with a QR verification code.",
+    tags: ["Python", "JavaScript", "Static Analysis", "PDF Reports"],
+    note: "Featured project · In progress",
     featured: true,
   },
   {
     number: "02",
     name: "FastFoodPOS",
     description:
-      "A native Windows restaurant point-of-sale and management application for order taking, billing, and menu management.",
+      "A native Windows restaurant point-of-sale and management application covering order billing, menu and inventory tracking, and sales reporting against a SQL Server backend. Relational schema modeled in-house, business logic kept separate from the Windows Forms UI.",
     tags: ["C#", ".NET 8", "WinForms", "SQL Server"],
     visual: "pos",
   },
   {
     number: "03",
-    name: "Passive Security Audits",
+    name: "Student Management System",
     description:
-      "Read-only, unauthenticated website assessments, documenting technology fingerprints, severity-rated observations, and remediation notes.",
+      "A database-backed system for managing student records, course enrolment and results, with input validation to protect data integrity. Full create, read, update and delete workflows plus tabular reporting over a normalized relational schema.",
+    tags: ["C#", ".NET WinForms", "SQL Server"],
+  },
+  {
+    number: "04",
+    name: "Web Application Security Assessments",
+    description:
+      "Authorized, passive, read-only assessments of live web applications. Enumerated application stacks and identified missing security headers and HTTPS misconfigurations using non-intrusive reconnaissance only, then delivered prioritised remediation reports with concrete fix guidance.",
     tags: ["Reconnaissance", "Report Writing", "Remediation"],
     note: "Authorized, passive assessment work",
     visual: "audit",
   },
   {
-    number: "04",
-    name: "Editorial Portfolio Sites",
+    number: "05",
+    name: "Personal Finance Management System",
     description:
-      "Responsive portfolio website experiments focused on thoughtful layout, accessible interactions, and honest presentation of real work.",
-    tags: ["HTML", "CSS", "Responsive UI"],
-    visual: "sites",
+      "An income and expense tracker with category-wise budgeting, monthly summaries, and persistent transaction history. Reporting views aggregate spending by category and period to highlight budget overruns at a glance.",
+    tags: ["C#", ".NET WinForms", "SQL Server"],
   },
 ];
 
