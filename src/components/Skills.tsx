@@ -90,10 +90,11 @@ export default function Skills() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 8, scale: 0.98 }}
                 transition={{ duration: 0.24, delay: Math.min(index * 0.025, 0.2) }}>
-                <div className="skill-card-top"><span className={`skill-mark skill-mark-${skill.icon}`} aria-hidden="true">
+                <span className={`skill-mark skill-mark-${skill.icon}`} aria-hidden="true">
                   <SkillIcon icon={skill.icon} />
-                </span><span className={skill.category === "Currently Learning" ? "skill-state learning" : "skill-state"}>{skill.category === "Currently Learning" ? "Learning" : "In toolkit"}</span></div>
-                <h3>{skill.name}</h3><p>{skill.detail}</p>
+                </span>
+                <span className="skill-text"><h3>{skill.name}</h3><p>{skill.detail}</p></span>
+                {skill.category === "Currently Learning" && <span className="skill-state learning">Learning</span>}
               </motion.article>
             ))}
           </AnimatePresence>

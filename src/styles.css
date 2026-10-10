@@ -154,12 +154,11 @@ img { display: block; max-width: 100%; }
 .filter-tab:hover { border-color: var(--accent); color: var(--ink); }
 .filter-tab.selected { background: var(--accent-strong); border-color: var(--accent-strong); color: #fff; }
 .skill-count { color: var(--faint); font-size: .76rem; white-space: nowrap; }
-.skills-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 13px; }
-.skill-card { padding: 20px; min-height: 150px; border: 1px solid var(--line); border-radius: 15px; background: linear-gradient(145deg, var(--panel), color-mix(in srgb, var(--panel) 75%, var(--bg))); transition: border-color .2s, transform .2s, background .2s; }
-.skill-card:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); transform: translateY(-4px); }
-.skill-card-top { display: flex; align-items: center; justify-content: space-between; gap: 7px; }
-.skill-mark { display: grid; place-items: center; width: 44px; height: 44px; flex: 0 0 44px; padding: 7px; border: 1px solid var(--line); border-radius: 11px; color: var(--accent); background: var(--accent-soft); }
-.skill-mark svg, .skill-mark img { width: 26px; height: 26px; display: block; }
+.skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.skill-card { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); transition: border-color .2s, transform .2s, background .2s; }
+.skill-card:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); transform: translateY(-2px); }
+.skill-mark { display: grid; place-items: center; width: 36px; height: 36px; flex: 0 0 36px; padding: 6px; border: 1px solid var(--line); border-radius: 9px; color: var(--accent); background: var(--accent-soft); }
+.skill-mark svg, .skill-mark img { width: 21px; height: 21px; display: block; }
 .skill-mark-python { color: #3776ab; }
 .skill-mark-csharp { color: #9b4f96; }
 .skill-mark-cplusplus { color: #659ad2; }
@@ -175,10 +174,11 @@ img { display: block; max-width: 100%; }
 .skill-mark-vscode { color: #35a8db; }
 .skill-mark-aws { color: #ff9900; }
 .skill-mark-network { color: #60a5fa; }
-.skill-state { color: var(--faint); font-size: .62rem; font-weight: 700; }
-.skill-state.learning { color: var(--warm); }
-.skill-card h3 { margin: 15px 0 2px; font: 700 .98rem var(--display); }
-.skill-card p { margin: 0; color: var(--muted); font-size: .78rem; }
+.skill-state { margin-left: auto; padding: 3px 8px; border: 1px solid var(--line); border-radius: 20px; font-size: .6rem; font-weight: 700; white-space: nowrap; }
+.skill-state.learning { color: var(--warm); border-color: color-mix(in srgb, var(--warm) 40%, var(--line)); }
+.skill-text { min-width: 0; flex: 1 1 auto; }
+.skill-text h3 { margin: 0; font: 700 .86rem var(--display); }
+.skill-text p { margin: 2px 0 0; color: var(--muted); font-size: .7rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 /* Projects */
 .featured-project { display: grid; grid-template-columns: 1.04fr .96fr; gap: 35px; padding: clamp(25px, 4vw, 44px); border: 1px solid var(--line-strong); border-radius: 22px; background: var(--panel); box-shadow: var(--shadow); position: relative; overflow: hidden; }
 .featured-project::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), rgba(96, 165, 250, .05)); }
@@ -282,7 +282,7 @@ a.contact-detail:hover .contact-detail-arrow { transform: translate(3px, -3px); 
   .portrait-label { left: -12px; bottom: 18px; }
   .orbit-one { width: 350px; height: 350px; }
   .orbit-two { width: 405px; height: 405px; }
-  .skills-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .project-card:last-child { grid-column: span 2; min-height: 250px; }
   .about-layout, .journey-layout { gap: 38px; }
@@ -323,7 +323,7 @@ a.contact-detail:hover .contact-detail-arrow { transform: translate(3px, -3px); 
   .filter-tabs { gap: 6px; }
   .filter-tab { padding: 8px 10px; font-size: .72rem; }
   .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
-  .skill-card { min-height: 135px; padding: 15px; }
+  .skill-card { padding: 10px 12px; gap: 10px; }
   .skill-state { font-size: .56rem; }
   .featured-project { grid-template-columns: 1fr; padding: 22px; gap: 24px; }
   .terminal-content { padding: 16px; font-size: .68rem; }
