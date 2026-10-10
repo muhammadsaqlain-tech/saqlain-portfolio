@@ -60,14 +60,14 @@ export default function Skills() {
   const [selected, setSelected] = useState<(typeof categories)[number]>("All");
   const visible = skills.filter((skill) => selected === "All" || skill.category === selected);
 
-  // Spotlight: each pill stores the cursor position in CSS vars so a soft
+  // Spotlight: each card stores the cursor position in CSS vars so a soft
   // radial glow can follow the pointer. Delegated on the container — one listener.
   function handleSpotlight(event: MouseEvent<HTMLDivElement>) {
-    const pill = (event.target as HTMLElement).closest(".skill-pill") as HTMLElement | null;
-    if (!pill) return;
-    const box = pill.getBoundingClientRect();
-    pill.style.setProperty("--mx", `${event.clientX - box.left}px`);
-    pill.style.setProperty("--my", `${event.clientY - box.top}px`);
+    const card = (event.target as HTMLElement).closest(".skill-card") as HTMLElement | null;
+    if (!card) return;
+    const box = card.getBoundingClientRect();
+    card.style.setProperty("--mx", `${event.clientX - box.left}px`);
+    card.style.setProperty("--my", `${event.clientY - box.top}px`);
   }
 
   return (
@@ -85,18 +85,22 @@ export default function Skills() {
         <motion.div layout className="skills-grid" onMouseMove={handleSpotlight}>
           <AnimatePresence mode="popLayout">
             {visible.map((skill, index) => (
-              <motion.span className="skill-pill" key={skill.name} layout
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.2, delay: Math.min(index * 0.02, 0.15) }}>
+              <motion.article className="skill-card" key={skill.name} layout
+                initial={{ opacity: 0, y: 12, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                transition={{ duration: 0.22, delay: Math.min(index * 0.025, 0.18) }}>
                 <span className={`skill-mark skill-mark-${skill.icon}`} aria-hidden="true">
                   <SkillIcon icon={skill.icon} />
                 </span>
-                <span className="skill-name">{skill.name}</span>
-                <span className="skill-detail">{skill.detail}</span>
-                {skill.category === "Currently Learning" && <span className="skill-state learning">Learning</span>}
-              </motion.span>
+                <span className="skill-card-body">
+                  <h3>{skill.name}</h3>
+                  <p>{skill.detail}</p>
+                  <span className={skill.category === "Currently Learning" ? "skill-badge learning" : "skill-badge"}>
+                    <i className="dot" aria-hidden="true" />{skill.category === "Currently Learning" ? "Learning" : "In toolkit"}
+                  </span>
+                </span>
+              </motion.article>
             ))}
           </AnimatePresence>
         </motion.div>
