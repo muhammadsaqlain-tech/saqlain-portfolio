@@ -87,11 +87,9 @@ export default function Skills() {
                 <span className="skill-card-body">
                   <h3>{skill.name}</h3>
                   <p>{skill.detail}</p>
-                  {skill.category === "Currently Learning" && (
-                    <span className="skill-badge learning">
-                      <i className="dot" aria-hidden="true" />Learning
-                    </span>
-                  )}
+                  <span className="skill-badge" style={{ visibility: skill.category === "Currently Learning" ? "visible" : "hidden" }} aria-hidden={skill.category !== "Currently Learning"}>
+                    <i className="dot" aria-hidden="true" />Learning
+                  </span>
                 </span>
               </motion.article>
             ))}
