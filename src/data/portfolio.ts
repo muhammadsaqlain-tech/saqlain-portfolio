@@ -83,7 +83,7 @@ export const projects: Project[] = [
     number: "03",
     name: "Passive Security Audits",
     description:
-      "Read-only, unauthenticated assessments of  website, documenting technology fingerprints, severity-rated observations, and remediation notes.",
+      "Read-only, unauthenticated website assessments, documenting technology fingerprints, severity-rated observations, and remediation notes.",
     tags: ["Reconnaissance", "Report Writing", "Remediation"],
     note: "Authorized, passive assessment work",
     visual: "audit",
