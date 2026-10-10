@@ -20,7 +20,7 @@ export default function Projects() {
         {featured && (
           <motion.article className="featured-project reveal" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }}>
             <div className="featured-project-copy">
-              <div className="project-label"><span className="project-label-dot" /> FEATURED PROJECT <span>01 / 04</span></div>
+              <div className="project-label"><span className="project-label-dot" /> FEATURED PROJECT <span>01 / 05</span></div>
               <h3>{featured.name}<span className="title-period">.</span></h3>
               <p>{featured.description}</p>
               <ul className="project-points">
