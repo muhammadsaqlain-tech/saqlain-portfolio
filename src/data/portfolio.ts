@@ -45,6 +45,28 @@ export const profile = {
   resume: "/saqlain-resume.pdf", // real resume, served from public/ — update the file there to change it
 };
 
+export type Certification = {
+  issuer: string;
+  title: string;
+  year: string;
+  url: string;
+};
+
+export const certifications: Certification[] = [
+  {
+    issuer: "Google",
+    title: "Technical Support Fundamentals",
+    year: "2026",
+    url: "https://coursera.org/share/80f6cb6efac86039d36dc8572efe8a6e",
+  },
+  {
+    issuer: "Johns Hopkins University",
+    title: "HTML, CSS & JavaScript for Web Developers",
+    year: "2026",
+    url: "https://coursera.org/share/030fba57ebb2a8704ea4e7ca2611d064",
+  },
+];
+
 export const skills: Skill[] = [
   { name: "Python", detail: "Scripting", category: "Languages", icon: "python" },
   { name: "C#", detail: ".NET / WinForms", category: "Languages", icon: "csharp" },

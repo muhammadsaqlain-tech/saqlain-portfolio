@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
-import { FiCode, FiTerminal, FiShield, FiTarget, FiDownload } from "react-icons/fi";
+import { FiCode, FiTerminal, FiShield, FiTarget, FiDownload, FiAward, FiArrowUpRight } from "react-icons/fi";
 import SectionHeading from "./SectionHeading";
-import { profile } from "../data/portfolio";
+import { profile, certifications } from "../data/portfolio";
 
 const focus = [
   { icon: <FiTerminal />, title: "Linux & scripting", text: "Building confidence with the command line and small automation scripts." },
@@ -20,6 +20,15 @@ export default function About() {
             <h3>Learn the fundamentals.<br /><span>Build things that work.</span></h3>
             <p>I’m Muhammad Saqlain, an undergraduate student interested in Linux, Python, IT support, and cloud security. I prefer practical learning: make something, test it, document the limitations, and improve it.</p>
             <p>My project work includes PhishGuard, a C#/.NET restaurant POS application, and passive security assessments. I try to be clear about what I know, what I have built, and what I am still learning.</p>
+            <div className="cert-list" aria-label="Certifications">
+              <span className="cert-heading"><FiAward aria-hidden="true" /> Certifications</span>
+              {certifications.map((cert) => (
+                <a key={cert.title} className="cert-link" href={cert.url} target="_blank" rel="noopener noreferrer">
+                  <span><strong>{cert.issuer}</strong> — {cert.title} <span className="cert-year">({cert.year})</span></span>
+                  <FiArrowUpRight aria-hidden="true" />
+                </a>
+              ))}
+            </div>
             <div className="story-note"><FiTarget /><span><strong>Current goal</strong> — find an opportunity to learn, contribute, and grow through real technical work.</span></div>
             <a className="button button-secondary resume-button" href={profile.resume} download="Muhammad-Saqlain-Resume.pdf"><FiDownload /> Download resume</a>
           </motion.div>
