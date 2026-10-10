@@ -63,7 +63,7 @@ export const certifications: Certification[] = [
     issuer: "Johns Hopkins University",
     title: "HTML, CSS & JavaScript for Web Developers",
     year: "2026",
-    url: "https://coursera.org/verify/5JKNPKEJ7MOV",
+    url: "https://coursera.org/verify/5JKNPKEJN7OV",
   },
 ];
 
