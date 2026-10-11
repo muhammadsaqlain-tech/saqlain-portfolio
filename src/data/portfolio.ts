@@ -99,12 +99,11 @@ export const services: Service[] = [
 export const skills: Skill[] = [
   { name: "Python", detail: "Scripting", category: "Comfortable", icon: "python" },
   { name: "C#", detail: ".NET / WinForms", category: "Comfortable", icon: "csharp" },
-  { name: "SQL", detail: "Queries / SQL Server", category: "Comfortable", icon: "sqlserver" },
+  { name: "SQL", detail: "Queries", category: "Comfortable", icon: "sqlserver" },
   { name: "HTML / CSS", detail: "Fundamentals", category: "Comfortable", icon: "htmlcss" },
   { name: "Git", detail: "Version control", category: "Comfortable", icon: "git" },
   { name: "Linux", detail: "Fundamentals", category: "Working knowledge", icon: "linux" },
   { name: "Bash", detail: "Basics", category: "Working knowledge", icon: "bash" },
-  { name: ".NET 8", detail: "Windows Forms", category: "Working knowledge", icon: "dotnet" },
   { name: "C++", detail: "Fundamentals", category: "Working knowledge", icon: "cplusplus" },
   { name: "AWS", detail: "SAA theory", category: "Learning now", icon: "aws" },
   { name: "Networking", detail: "CCNA", category: "Learning now", icon: "network" },
