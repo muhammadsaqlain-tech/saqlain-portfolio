@@ -24,8 +24,6 @@ export default function About() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
           >
-            <span className="story-index">01 — THE APPROACH</span>
-            <h3>Build things <span>that work.</span></h3>
             <p>I’m Muhammad Saqlain, a CS undergraduate working toward becoming a cloud engineer. I don’t just study concepts — I build small projects that force me to understand how systems actually work, from Python automation scripts and Windows desktop applications to Linux labs and cloud fundamentals.</p>
             <p>I’m a vibe coder too. I use AI tools to prototype faster, explore ideas, and learn smarter — but I verify everything myself. The AI suggests, I decide. Every line that ships is something I understand.</p>
             <p>My current focus is the cloud engineering toolkit: Linux, networking, Python, and AWS. Along the way I’ve built PhishGuard (a file-intelligence toolkit), desktop apps in C#/.NET, and performed passive security assessments of live web applications.</p>
