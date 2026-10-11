@@ -22,9 +22,6 @@ export default function Hero() {
       <div className="orb orb-b" aria-hidden="true" />
       <div className="hero-grid wrap">
         <div className="hero-copy">
-          <motion.div className="availability" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
-            <span className="availability-dot" /> {profile.availability}
-          </motion.div>
           <motion.p className="hero-kicker" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }}>UNDERGRADUATE STUDENT</motion.p>
           {/* Masked line reveals: each line slides up from behind an overflow mask */}
           <h1 className="hero-title">
