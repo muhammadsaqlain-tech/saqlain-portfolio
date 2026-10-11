@@ -109,7 +109,6 @@ export const skills: Skill[] = [
   { name: "SQL Server", detail: "Databases", category: "Tools & Platforms", icon: "sqlserver" },
   { name: "VS Code", detail: "Editor", category: "Tools & Platforms", icon: "vscode" },
   { name: "AWS", detail: "SAA theory · in progress", category: "Currently Learning", icon: "aws" },
-  { name: "Networking", detail: "Fundamentals", category: "Tools & Platforms", icon: "network" },
   { name: "Networking", detail: "Basics · in progress", category: "Currently Learning", icon: "network" },
 ];
 
