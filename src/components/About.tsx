@@ -1,8 +1,7 @@
 import { motion } from "motion/react";
 import SectionHeading from "./SectionHeading";
-import portrait from "../assets/saqlain-original.jpg";
 
-export default function About() {
+export default function About({ portraitRef }: { portraitRef: React.RefObject<HTMLDivElement | null> }) {
   return (
     <section className="section-shell section-light" id="about">
       <div className="wrap">
@@ -15,7 +14,7 @@ export default function About() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <img src={portrait} alt="Portrait of Muhammad Saqlain" loading="lazy" />
+            <div ref={portraitRef} className="about-placeholder" aria-hidden="true" />
           </motion.div>
           <motion.div
             className="about-text"

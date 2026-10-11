@@ -8,7 +8,7 @@ import Magnetic from "./Magnetic";
 // Easing that feels hand-tuned: fast start, soft landing.
 const EASE = [0.2, 0.7, 0.2, 1] as const;
 
-export default function Hero() {
+export default function Hero({ portraitRef }: { portraitRef: React.RefObject<HTMLDivElement | null> }) {
   const reduce = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
   // Gentle parallax: the portrait drifts slightly slower than the scroll.
@@ -83,7 +83,11 @@ export default function Hero() {
           <div className="portrait-grid" aria-hidden="true" />
           {/* Portrait: plain frame with a single entrance animation (no looping float — keeps it calm) */}
           <div className="portrait-frame">
-            <img src={portrait} alt="Portrait of Muhammad Saqlain" fetchPriority="high" />
+            {reduce ? (
+              <img src={portrait} alt="Portrait of Muhammad Saqlain" fetchPriority="high" />
+            ) : (
+              <div ref={portraitRef} className="portrait-placeholder" aria-hidden="true" />
+            )}
           </div>
           <div className="orbit orbit-one" />
           <div className="orbit orbit-two" />
