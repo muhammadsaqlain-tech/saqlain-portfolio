@@ -13,7 +13,7 @@ export default function About() {
   return (
     <section className="section-shell section-light" id="about">
       <div className="wrap">
-        <SectionHeading eyebrow="A little about me" title={<>Curiosity, consistency, <em>real work.</em></>} description="I’m an undergraduate student growing my technical skills one project and one concept at a time." />
+        <SectionHeading eyebrow="About me" title={<>About me</>} description="I’m an undergraduate student growing my technical skills one project and one concept at a time." />
         <div className="about-layout">
           <motion.div className="about-story reveal" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }}>
             <span className="story-index">01 — THE APPROACH</span>
