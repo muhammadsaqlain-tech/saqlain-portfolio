@@ -7,11 +7,13 @@ type Props = {
   aboutRef: React.RefObject<HTMLDivElement | null>;
 };
 
+type Rect = { x: number; y: number; w: number; h: number };
+
 /**
- * Single shared profile image that travels from Hero to About on scroll.
- * One <img> element, position: fixed, driven by scroll via rAF.
- * Tracks live placeholder rects in Hero and About, interpolating
- * position/size with smoothstep easing. Reverse scroll reverses it.
+ * Single shared profile image traveling Hero -> About on scroll.
+ * One <img>, position: fixed. Position is a pure function of scrollY
+ * (FLIP-style: measure document coords once, interpolate on scroll).
+ * No per-frame measurement -> no jitter. Reverse scroll reverses it.
  */
 export default function SharedPortrait({ heroRef, aboutRef }: Props) {
   const imgRef = useRef<HTMLImageElement>(null);
@@ -24,49 +26,76 @@ export default function SharedPortrait({ heroRef, aboutRef }: Props) {
     const aboutEl = aboutRef.current;
     if (!img || !heroEl || !aboutEl) return;
 
+    let heroDoc: Rect | null = null;
+    let aboutDoc: Rect | null = null;
     let raf = 0;
+    let lastY = -1;
+
     const smooth = (t: number) => t * t * (3 - 2 * t);
     const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
 
-    const update = () => {
+    // Measure document coords (stable — placeholders have no transforms)
+    const measure = () => {
       const hr = heroEl.getBoundingClientRect();
       const ar = aboutEl.getBoundingClientRect();
-      const vh = window.innerHeight;
+      const sy = window.scrollY;
+      heroDoc = { x: hr.left, y: hr.top + sy, w: hr.width, h: hr.height };
+      aboutDoc = { x: ar.left, y: ar.top + sy, w: ar.width, h: ar.height };
+      lastY = -1; // force repaint
+    };
 
-      // progress: 0 while About is below viewport, 1 once About is well into view
-      const progress = clamp01((vh - ar.top) / (vh - vh * 0.35));
+    const render = () => {
+      raf = 0;
+      if (!heroDoc || !aboutDoc) return;
+      const sy = window.scrollY;
+      if (sy === lastY) return;
+      lastY = sy;
+
+      const vh = window.innerHeight;
+      // Travel window: about enters viewport -> about halfway up
+      const s0 = aboutDoc.y - vh;
+      const s1 = aboutDoc.y - vh * 0.5;
+      const progress = s1 > s0 ? clamp01((sy - s0) / (s1 - s0)) : 1;
       const e = smooth(progress);
 
-      const hx = hr.left + hr.width / 2;
-      const hy = hr.top + hr.height / 2;
-      const ax = ar.left + ar.width / 2;
-      const ay = ar.top + ar.height / 2;
+      const dx = heroDoc.x + (aboutDoc.x - heroDoc.x) * e;
+      const dy = heroDoc.y + (aboutDoc.y - heroDoc.y) * e;
+      const w = heroDoc.w + (aboutDoc.w - heroDoc.w) * e;
+      const h = heroDoc.h + (aboutDoc.h - heroDoc.h) * e;
 
-      const cx = hx + (ax - hx) * e;
-      const cy = hy + (ay - hy) * e;
-      const w = hr.width + (ar.width - hr.width) * e;
-      const h = hr.height + (ar.height - hr.height) * e;
-
-      // Guard against zero-size placeholders (not yet laid out)
       if (w > 4 && h > 4) {
-        img.style.transform = `translate3d(${(cx - w / 2).toFixed(1)}px, ${(cy - h / 2).toFixed(1)}px, 0)`;
+        // fixed positioning: viewport coords = doc coords - scrollY
+        img.style.transform = `translate3d(${dx.toFixed(1)}px, ${(dy - sy).toFixed(1)}px, 0)`;
         img.style.width = `${w.toFixed(1)}px`;
         img.style.height = `${h.toFixed(1)}px`;
         img.style.borderRadius = `${(20 * e).toFixed(1)}px`;
       }
 
-      // Hide when far outside the relevant scroll range (perf + no stray pixels)
-      const inRange = ar.top < vh * 1.3 && hr.bottom > -vh * 0.3;
+      const inRange = sy < aboutDoc.y + aboutDoc.h + vh && sy > heroDoc.y - vh;
       img.style.opacity = inRange ? "1" : "0";
-
-      raf = requestAnimationFrame(update);
     };
 
-    raf = requestAnimationFrame(update);
-    return () => cancelAnimationFrame(raf);
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(render);
+    };
+
+    // Initial measure after layout settles (fonts/images can shift layout)
+    measure();
+    const t1 = setTimeout(measure, 500);
+    const t2 = setTimeout(measure, 1500);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", measure);
+    onScroll();
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", measure);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, [reduce, heroRef, aboutRef]);
 
-  // Reduced motion: no traveling image; Hero renders a static <img> instead.
   if (reduce) return null;
 
   return (

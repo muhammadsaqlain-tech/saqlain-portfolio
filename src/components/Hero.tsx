@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { FiArrowDownRight, FiArrowUpRight, FiDownload, FiMapPin, FiTerminal } from "react-icons/fi";
 import portrait from "../assets/saqlain-original.jpg";
 import { profile } from "../data/portfolio";
@@ -12,10 +12,7 @@ export default function Hero({ portraitRef }: { portraitRef: React.RefObject<HTM
   const reduce = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
   // Gentle parallax: the portrait drifts slightly slower than the scroll.
-  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
-  const visualY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 220]);
-  const visualScale = useTransform(scrollYProgress, [0, 1], [1, reduce ? 1 : 0.92]);
-  const visualOpacity = useTransform(scrollYProgress, [0, 0.9], [1, reduce ? 1 : 0.35]);
+
 
   const roles = ["Python developer", "Cloud engineer", "Linux", "Networking"];
   const [displayText, setDisplayText] = useState("");
@@ -78,7 +75,7 @@ export default function Hero({ portraitRef }: { portraitRef: React.RefObject<HTM
             <span><FiTerminal /> Learning in public</span>
           </motion.div>
         </div>
-        <motion.div className="hero-visual" style={{ y: visualY, scale: visualScale, opacity: visualOpacity }} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.75, delay: 0.2 }}>
+        <motion.div className="hero-visual" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.75, delay: 0.2 }}>
           <div className="portrait-halo" />
           <div className="portrait-grid" aria-hidden="true" />
           {/* Portrait: plain frame with a single entrance animation (no looping float — keeps it calm) */}

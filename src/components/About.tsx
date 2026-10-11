@@ -7,15 +7,9 @@ export default function About({ portraitRef }: { portraitRef: React.RefObject<HT
       <div className="wrap">
         <SectionHeading title={<>About me</>} />
         <div className="about-split">
-          <motion.div
-            className="about-pic"
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          >
+          <div className="about-pic">
             <div ref={portraitRef} className="about-placeholder" aria-hidden="true" />
-          </motion.div>
+          </div>
           <motion.div
             className="about-text"
             initial={{ opacity: 0, x: 40 }}
