@@ -36,7 +36,7 @@ export const profile = {
   name: "Muhammad Saqlain",
   firstName: "Muhammad",
   lastName: "Saqlain",
-  role: "Linux & Python Learner · Aspiring IT Support / Cloud Security Trainee",
+  role: "Aspiring Python Developer",
   email: "muhammadsaqlain4787@gmail.com",
   location: "Faisalabad, Pakistan",
   github: "",
@@ -67,6 +67,35 @@ export const certifications: Certification[] = [
   },
 ];
 
+export type Service = {
+  title: string;
+  detail: string;
+  icon: string;
+};
+
+export const services: Service[] = [
+  {
+    title: "Python Development",
+    detail: "Scripts, automation tools, and file-analysis utilities — built, tested, and documented.",
+    icon: "python",
+  },
+  {
+    title: "IT Support",
+    detail: "Troubleshooting, system setup, and user support — Google-certified fundamentals.",
+    icon: "support",
+  },
+  {
+    title: "Security Assessments",
+    detail: "Passive, read-only website audits with severity-rated findings and fix guidance.",
+    icon: "shield",
+  },
+  {
+    title: "Web Development",
+    detail: "Responsive single-page sites with clean layout and honest, accessible design.",
+    icon: "web",
+  },
+];
+
 export const skills: Skill[] = [
   { name: "Python", detail: "Scripting", category: "Languages", icon: "python" },
   { name: "C#", detail: ".NET / WinForms", category: "Languages", icon: "csharp" },
@@ -80,6 +109,7 @@ export const skills: Skill[] = [
   { name: "SQL Server", detail: "Databases", category: "Tools & Platforms", icon: "sqlserver" },
   { name: "VS Code", detail: "Editor", category: "Tools & Platforms", icon: "vscode" },
   { name: "AWS", detail: "SAA theory · in progress", category: "Currently Learning", icon: "aws" },
+  { name: "Networking", detail: "Fundamentals", category: "Tools & Platforms", icon: "network" },
   { name: "Networking", detail: "Basics · in progress", category: "Currently Learning", icon: "network" },
 ];
 

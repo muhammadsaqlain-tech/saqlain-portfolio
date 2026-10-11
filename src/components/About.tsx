@@ -18,8 +18,8 @@ export default function About() {
           <motion.div className="about-story reveal" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }}>
             <span className="story-index">01 — THE APPROACH</span>
             <h3>Learn the fundamentals.<br /><span>Build things that work.</span></h3>
-            <p>I’m Muhammad Saqlain, an undergraduate student interested in Linux, Python, IT support, and cloud security. I prefer practical learning: make something, test it, document the limitations, and improve it.</p>
-            <p>My project work includes PhishGuard, a C#/.NET restaurant POS application, and passive security assessments. I try to be clear about what I know, what I have built, and what I am still learning.</p>
+            <p>I’m Muhammad Saqlain, an aspiring Python developer and CS undergraduate. I learn by building — scripts, tools, and small applications I can test and improve.</p>
+            <p>My work includes PhishGuard, desktop apps in C#/.NET, and passive security assessments. I’m clear about what I know, what I’ve built, and what I’m still learning.</p>
             <div className="cert-list" aria-label="Certifications">
               <span className="cert-heading"><FiAward aria-hidden="true" /> Certifications</span>
               {certifications.map((cert) => (

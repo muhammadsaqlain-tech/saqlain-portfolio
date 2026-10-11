@@ -40,10 +40,10 @@ export default function Hero() {
             </span>
           </h1>
           <motion.p className="hero-role" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.34 }}>
-            Learning to build secure systems <i>·</i> Linux &amp; Python learner
+            Aspiring Python developer <i>·</i> building practical tools
           </motion.p>
           <motion.p className="hero-description" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.55 }}>
-            I build practical tools, learn by solving real problems, and document what I discover. My current focus is Linux, Python scripting, and the foundations of cloud security.
+            I build practical tools, learn by solving real problems, and document what I discover. My current focus is Python scripting, practical projects, and the foundations of cloud security.
           </motion.p>
           <motion.div className="hero-buttons" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
             <Magnetic><a className="button button-primary" href="#projects">Explore my work <FiArrowUpRight /></a></Magnetic>
