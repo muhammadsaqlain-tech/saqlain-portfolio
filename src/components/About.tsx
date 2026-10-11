@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
-import { FiCode, FiTerminal, FiShield, FiTarget, FiDownload, FiAward, FiArrowUpRight } from "react-icons/fi";
+import { FiCode, FiTerminal, FiShield, FiAward, FiArrowUpRight } from "react-icons/fi";
 import SectionHeading from "./SectionHeading";
-import { profile, certifications } from "../data/portfolio";
+import { certifications } from "../data/portfolio";
 
 const focus = [
   { icon: <FiTerminal />, title: "Linux & scripting", text: "Building confidence with the command line and small automation scripts." },
@@ -29,8 +29,6 @@ export default function About() {
                 </a>
               ))}
             </div>
-            <div className="story-note"><FiTarget /><span><strong>Current goal</strong> — find an opportunity to learn, contribute, and grow through real technical work.</span></div>
-            <a className="button button-secondary resume-button" href={profile.resume} download="Muhammad-Saqlain-Resume.pdf"><FiDownload /> Download resume</a>
           </motion.div>
           <div className="focus-list">
             {focus.map((item, index) => (
