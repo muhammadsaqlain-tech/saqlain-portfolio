@@ -11,7 +11,7 @@ export default function Contact() {
   return (
     <section className="section-shell section-light" id="contact">
       <div className="wrap">
-        <SectionHeading eyebrow="Contact" title={<>Contact</>} description="For internship opportunities, collaboration, or a technical conversation, email is the most reliable way to reach me." />
+        <SectionHeading title={<>Contact</>} description="For internship opportunities, collaboration, or a technical conversation, email is the most reliable way to reach me." />
         <div className="contact-layout">
           <div className="contact-intro reveal">
             <span className="contact-symbol"><FiSend /></span>

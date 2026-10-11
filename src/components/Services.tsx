@@ -16,7 +16,6 @@ export default function Services() {
     <section className="section-shell" id="services">
       <div className="wrap">
         <SectionHeading
-          eyebrow="What I offer"
           title={<>What I can help with</>}
           description="Practical help for small teams and individuals."
         />
