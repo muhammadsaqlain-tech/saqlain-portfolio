@@ -64,7 +64,7 @@ export default function Skills() {
   return (
     <section className="section-shell section-dark" id="skills">
       <div className="wrap">
-        <SectionHeading eyebrow="Tools & technologies" title={<>Skills</>} description="Grouped by how well I know them." />
+        <SectionHeading title={<>Skills</>} description="Grouped by how well I know them." />
         <div className="skill-toolbar reveal">
           <div className="filter-tabs" role="tablist" aria-label="Filter skills">
             {categories.map((category) => (
