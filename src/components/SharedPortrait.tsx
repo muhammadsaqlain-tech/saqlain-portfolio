@@ -58,10 +58,14 @@ export default function SharedPortrait({ heroRef, aboutRef }: Props) {
       const progress = s1 > s0 ? clamp01((sy - s0) / (s1 - s0)) : 1;
       const e = smooth(progress);
 
+      // Arc path: y eases slightly differently + gentle upward lift mid-flight
+      const arc = Math.sin(progress * Math.PI);
       const dx = heroDoc.x + (aboutDoc.x - heroDoc.x) * e;
-      const dy = heroDoc.y + (aboutDoc.y - heroDoc.y) * e;
-      const w = heroDoc.w + (aboutDoc.w - heroDoc.w) * e;
-      const h = heroDoc.h + (aboutDoc.h - heroDoc.h) * e;
+      const dy = heroDoc.y + (aboutDoc.y - heroDoc.y) * e - arc * 40;
+      // Subtle scale-up mid-flight (image "lifts" then settles)
+      const lift = 1 + arc * 0.05;
+      const w = (heroDoc.w + (aboutDoc.w - heroDoc.w) * e) * lift;
+      const h = (heroDoc.h + (aboutDoc.h - heroDoc.h) * e) * lift;
 
       if (w > 4 && h > 4) {
         // fixed positioning: viewport coords = doc coords - scrollY
