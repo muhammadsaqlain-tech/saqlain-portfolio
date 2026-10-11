@@ -19,7 +19,7 @@ export default function About() {
             <span className="story-index">01 — THE APPROACH</span>
             <h3>Build things <span>that work.</span></h3>
             <p>I’m Muhammad Saqlain, an aspiring cloud engineer and CS undergraduate. I learn by doing — labs, scripts, and small projects that teach me how systems work.</p>
-            <p>My work includes PhishGuard, desktop apps in C#/.NET, and passive security assessments. I’m clear about what I know, what I’ve built, and what I’m still learning.</p>
+            <p>My work includes PhishGuard, desktop apps in C#/.NET, and passive security assessments.</p>
             <div className="cert-list" aria-label="Certifications">
               <span className="cert-heading"><FiAward aria-hidden="true" /> Certifications</span>
               {certifications.map((cert) => (

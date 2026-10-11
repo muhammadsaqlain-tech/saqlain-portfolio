@@ -59,7 +59,6 @@ export default function Hero() {
           <div className="portrait-frame">
             <img src={portrait} alt="Portrait of Muhammad Saqlain" fetchPriority="high" />
           </div>
-          <div className="portrait-label"><span className="label-mark"><FiShield /></span><span><strong>Build with purpose</strong><small>Learn · Test · Improve</small></span></div>
           <div className="orbit orbit-one" />
           <div className="orbit orbit-two" />
         </motion.div>

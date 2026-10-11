@@ -18,7 +18,7 @@ export default function Projects() {
   return (
     <section className="section-shell section-light" id="projects">
       <div className="wrap">
-        <SectionHeading eyebrow="Selected work" title={<>Projects with a <em>purpose.</em></>} description="A selection of practical work and experiments. Descriptions focus on what each project does rather than inflated claims." />
+        <SectionHeading eyebrow="Selected work" title={<>Projects</>} description="A selection of practical work and experiments. Descriptions focus on what each project does rather than inflated claims." />
         {featured && (
           <motion.article className="featured-project reveal" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }}>
             <div className="featured-project-copy">

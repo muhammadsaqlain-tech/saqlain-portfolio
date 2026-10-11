@@ -18,7 +18,7 @@ import dotnetLogo from "../assets/icons/dotnet.svg";
 import vscodeLogo from "../assets/icons/vscode.svg";
 import awsLogo from "../assets/icons/aws.svg";
 
-const categories = ["All", "Languages", "Tools & Platforms", "Currently Learning"] as const;
+const categories = ["All", "Comfortable", "Working knowledge", "Learning now"] as const;
 
 // Maps each skill's icon key (from portfolio.ts) to its official logo file.
 // "htmlcss" and "network" are special-cased in SkillIcon below.
@@ -64,7 +64,7 @@ export default function Skills() {
   return (
     <section className="section-shell section-dark" id="skills">
       <div className="wrap">
-        <SectionHeading eyebrow="Tools & technologies" title={<>A growing toolkit, <em>built honestly.</em></>} description="Skills are grouped by how I use them. Topics marked as learning are works in progress, not claims of expertise." />
+        <SectionHeading eyebrow="Tools & technologies" title={<>Skills</>} description="Grouped by how well I know them." />
         <div className="skill-toolbar reveal">
           <div className="filter-tabs" role="tablist" aria-label="Filter skills">
             {categories.map((category) => (
@@ -87,7 +87,7 @@ export default function Skills() {
                 <span className="skill-card-body">
                   <h3>{skill.name}</h3>
                   <p>{skill.detail}</p>
-                  <span className="skill-badge" style={{ visibility: skill.category === "Currently Learning" ? "visible" : "hidden" }} aria-hidden={skill.category !== "Currently Learning"}>
+                  <span className="skill-badge" style={{ visibility: skill.category === "Learning now" ? "visible" : "hidden" }} aria-hidden={skill.category !== "Learning now"}>
                     <i className="dot" aria-hidden="true" />Learning
                   </span>
                 </span>

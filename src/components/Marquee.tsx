@@ -14,7 +14,6 @@ const items = [
   "Git",
   "HTML / CSS",
   ".NET",
-  "VS Code",
   "AWS",
   "Networking",
 ];

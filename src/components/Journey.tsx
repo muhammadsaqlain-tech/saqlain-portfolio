@@ -16,7 +16,7 @@ export default function Journey() {
   return (
     <section className="section-shell section-dark" id="journey">
       <div className="wrap">
-        <SectionHeading eyebrow="Learning path" title={<>Progress over <em>pretence.</em></>} description="An honest snapshot of education, personal projects, and the areas I’m actively learning." />
+        <SectionHeading eyebrow="Learning path" title={<>Education and learning</>} description="An honest snapshot of education, personal projects, and the areas I’m actively learning." />
         <div className="journey-layout">
           <div className="journey-list" ref={listRef}>
             {!reduce && <motion.span className="journey-progress" style={{ scaleY: draw }} aria-hidden="true" />}

@@ -17,8 +17,8 @@ export default function Services() {
       <div className="wrap">
         <SectionHeading
           eyebrow="What I offer"
-          title={<>Services, <em>done honestly.</em></>}
-          description="Practical help for small teams and individuals — no inflated claims, just real work."
+          title={<>What I can help with</>}
+          description="Practical help for small teams and individuals."
         />
         <div className="services-grid">
           {services.map((service, index) => (

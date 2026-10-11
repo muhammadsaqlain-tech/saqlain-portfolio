@@ -15,7 +15,7 @@
 export type Skill = {
   name: string;
   detail: string;
-  category: "Languages" | "Tools & Platforms" | "Currently Learning";
+  category: "Comfortable" | "Working knowledge" | "Learning now";
   icon: string;
 };
 
@@ -97,19 +97,17 @@ export const services: Service[] = [
 ];
 
 export const skills: Skill[] = [
-  { name: "Python", detail: "Scripting", category: "Languages", icon: "python" },
-  { name: "C#", detail: ".NET / WinForms", category: "Languages", icon: "csharp" },
-  { name: "C++", detail: "Fundamentals", category: "Languages", icon: "cplusplus" },
-  { name: "SQL", detail: "Queries / SQL Server", category: "Languages", icon: "sqlserver" },
-  { name: "Bash", detail: "Basics", category: "Languages", icon: "bash" },
-  { name: "HTML / CSS", detail: "Fundamentals", category: "Languages", icon: "htmlcss" },
-  { name: "Linux", detail: "Fundamentals", category: "Tools & Platforms", icon: "linux" },
-  { name: "Git", detail: "Version control", category: "Tools & Platforms", icon: "git" },
-  { name: ".NET 8", detail: "Windows Forms", category: "Tools & Platforms", icon: "dotnet" },
-  { name: "SQL Server", detail: "Databases", category: "Tools & Platforms", icon: "sqlserver" },
-  { name: "VS Code", detail: "Editor", category: "Tools & Platforms", icon: "vscode" },
-  { name: "AWS", detail: "SAA theory · in progress", category: "Currently Learning", icon: "aws" },
-  { name: "Networking", detail: "CCNA · in progress", category: "Currently Learning", icon: "network" },
+  { name: "Python", detail: "Scripting", category: "Comfortable", icon: "python" },
+  { name: "C#", detail: ".NET / WinForms", category: "Comfortable", icon: "csharp" },
+  { name: "SQL", detail: "Queries / SQL Server", category: "Comfortable", icon: "sqlserver" },
+  { name: "HTML / CSS", detail: "Fundamentals", category: "Comfortable", icon: "htmlcss" },
+  { name: "Git", detail: "Version control", category: "Comfortable", icon: "git" },
+  { name: "Linux", detail: "Fundamentals", category: "Working knowledge", icon: "linux" },
+  { name: "Bash", detail: "Basics", category: "Working knowledge", icon: "bash" },
+  { name: ".NET 8", detail: "Windows Forms", category: "Working knowledge", icon: "dotnet" },
+  { name: "C++", detail: "Fundamentals", category: "Working knowledge", icon: "cplusplus" },
+  { name: "AWS", detail: "SAA theory", category: "Learning now", icon: "aws" },
+  { name: "Networking", detail: "CCNA", category: "Learning now", icon: "network" },
 ];
 
 export const projects: Project[] = [
@@ -117,7 +115,7 @@ export const projects: Project[] = [
     number: "01",
     name: "PhishGuard",
     description:
-      "A static file-intelligence toolkit that computes SHA-256, MD5 and SHA-1 hashes, identifies true file types by magic-byte signature rather than extension, and surfaces threat indicators inside PDF documents. Reports only what it can verify — findings export as a PDF analyst report with a QR verification code.",
+      "A static file-intelligence toolkit. Shows SHA-256, MD5 and SHA-1 hashes, real file type, and PDF red flags. Never runs the file. Exports a PDF analyst report with a QR verification code.",
     tags: ["Python", "JavaScript", "Static Analysis", "PDF Reports"],
     note: "Featured project · In progress",
     featured: true,
