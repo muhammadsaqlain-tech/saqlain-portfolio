@@ -40,7 +40,7 @@ export default function Hero() {
             Aspiring cloud engineer <i>·</i> building practical skills
           </motion.p>
           <motion.p className="hero-description" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.55 }}>
-            CS undergraduate building toward cloud engineering. Linux, Python, AWS.
+            I build small software projects to understand how systems work, from Python tools and desktop applications to Linux and cloud fundamentals.
           </motion.p>
           <motion.div className="hero-buttons" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
             <Magnetic><a className="button button-primary" href="#projects">Explore my work <FiArrowUpRight /></a></Magnetic>
