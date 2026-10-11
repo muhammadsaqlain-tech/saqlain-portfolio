@@ -1,14 +1,15 @@
 import { motion } from "motion/react";
 import SectionHeading from "./SectionHeading";
+import portrait from "../assets/saqlain-original.jpg";
 
-export default function About({ portraitRef }: { portraitRef: React.RefObject<HTMLDivElement | null> }) {
+export default function About() {
   return (
     <section className="section-shell section-light" id="about">
       <div className="wrap">
         <SectionHeading title={<>About me</>} />
         <div className="about-split">
           <div className="about-pic">
-            <div ref={portraitRef} className="about-placeholder" aria-hidden="true" />
+            <img src={portrait} alt="Portrait of Muhammad Saqlain" loading="lazy" />
           </div>
           <motion.div
             className="about-text"
@@ -20,7 +21,7 @@ export default function About({ portraitRef }: { portraitRef: React.RefObject<HT
             <p>I’m Muhammad Saqlain, a CS undergraduate working toward becoming a cloud engineer. I don’t just study concepts — I build small projects that force me to understand how systems actually work, from Python automation scripts and Windows desktop applications to Linux labs and cloud fundamentals.</p>
             <p>I’m a vibe coder too. I use AI tools to prototype faster, explore ideas, and learn smarter — but I verify everything myself. The AI suggests, I decide. Every line that ships is something I understand.</p>
             <p>My current focus is the cloud engineering toolkit: Linux, networking, Python, and AWS. Along the way I’ve built PhishGuard (a file-intelligence toolkit), desktop apps in C#/.NET, and performed passive security assessments of live web applications.</p>
-            <p>I document what I learn, stay honest about what I don’t know yet, and keep building.</p>
+            <p><strong>Every project makes me better — and I’m just getting started.</strong></p>
           </motion.div>
         </div>
       </div>

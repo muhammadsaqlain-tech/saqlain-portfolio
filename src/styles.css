@@ -268,29 +268,13 @@ img { display: block; max-width: 100%; }
 /* About split — pic left, text right */
 .about-split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; align-items: start; margin-top: -8px; }
 .about-pic { position: relative; border-radius: 20px; overflow: hidden; }
-.about-pic { border-radius: 20px; }
+.about-pic img { display: block; width: 100%; height: auto; object-fit: contain; border-radius: 20px; border: 1px solid var(--line); filter: drop-shadow(0 25px 38px rgba(0, 0, 0, .18)); background: var(--bg-2); }
 .about-text .story-index { display: block; margin-bottom: 12px; }
 .about-text h3 { margin: 0 0 18px; font: 800 clamp(1.8rem, 4vw, 2.4rem) var(--display); letter-spacing: -.03em; }
 .about-text h3 span { color: var(--accent); }
-.about-text p { color: var(--muted); font-size: 1rem; line-height: 1.75; margin: 0 0 14px; }
+.about-text p { color: var(--muted); font-size: 1.12rem; line-height: 1.8; margin: 0 0 16px; }
 
 
-/* Shared traveling portrait — one <img>, fixed, scroll-driven */
-.shared-portrait {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 50;
-  object-fit: cover;
-  pointer-events: none;
-  will-change: transform, width, height, border-radius;
-  border: 1px solid var(--line);
-  filter: drop-shadow(0 25px 38px rgba(0, 0, 0, .18));
-  margin: 0;
-  opacity: 0;
-}
-.portrait-placeholder { width: 100%; height: 100%; max-height: 560px; aspect-ratio: 800 / 903; }
-.about-placeholder { width: 100%; aspect-ratio: 800 / 903; }
 
 /* Journey */
 .journey-layout { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(45px, 8vw, 115px); align-items: start; }

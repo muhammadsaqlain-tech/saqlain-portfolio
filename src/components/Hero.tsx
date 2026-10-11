@@ -8,7 +8,7 @@ import Magnetic from "./Magnetic";
 // Easing that feels hand-tuned: fast start, soft landing.
 const EASE = [0.2, 0.7, 0.2, 1] as const;
 
-export default function Hero({ portraitRef }: { portraitRef: React.RefObject<HTMLDivElement | null> }) {
+export default function Hero() {
   const reduce = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
   // Gentle parallax: the portrait drifts slightly slower than the scroll.
@@ -62,9 +62,6 @@ export default function Hero({ portraitRef }: { portraitRef: React.RefObject<HTM
           <motion.p className="hero-role typewriter" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.34 }}>
             <span>{displayText}</span><span className="type-cursor" aria-hidden="true" />
           </motion.p>
-          <motion.p className="hero-description" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.55 }}>
-            I build small software projects to understand how systems work, from Python tools and desktop applications to Linux and cloud fundamentals.
-          </motion.p>
           <motion.div className="hero-buttons" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
             <Magnetic><a className="button button-primary" href="#projects">Explore my work <FiArrowUpRight /></a></Magnetic>
             <Magnetic><a className="button button-secondary" href="#contact">Get in touch <FiArrowDownRight /></a></Magnetic>
@@ -80,11 +77,7 @@ export default function Hero({ portraitRef }: { portraitRef: React.RefObject<HTM
           <div className="portrait-grid" aria-hidden="true" />
           {/* Portrait: plain frame with a single entrance animation (no looping float — keeps it calm) */}
           <div className="portrait-frame">
-            {reduce ? (
-              <img src={portrait} alt="Portrait of Muhammad Saqlain" fetchPriority="high" />
-            ) : (
-              <div ref={portraitRef} className="portrait-placeholder" aria-hidden="true" />
-            )}
+            <img src={portrait} alt="Portrait of Muhammad Saqlain" fetchPriority="high" />
           </div>
           <div className="orbit orbit-one" />
           <div className="orbit orbit-two" />
