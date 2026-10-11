@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
-import { FiArrowDownRight, FiArrowUpRight, FiDownload, FiMapPin, FiShield, FiTerminal } from "react-icons/fi";
+import { FiArrowDownRight, FiArrowUpRight, FiDownload, FiMapPin, FiTerminal } from "react-icons/fi";
 import portrait from "../assets/saqlain-original.jpg";
 import { profile } from "../data/portfolio";
 import Magnetic from "./Magnetic";
