@@ -129,9 +129,10 @@ export const projects: Project[] = [
     number: "03",
     name: "Student Management System",
     description:
-      "I built a database-backed system for student records, course enrolment and results, with full CRUD workflows and tabular reporting.",
-    tags: ["C#", ".NET WinForms", "SQL Server"],
+      "I built a student records system with course enrolment, attendance, marks and results. XML-based storage, full CRUD workflows and tabular reporting.",
+    tags: ["C#", ".NET WinForms", "XML"],
     visual: "student",
+    href: "https://github.com/muhammadsaqlain-tech/student-management-system",
   },
   {
     number: "04",
