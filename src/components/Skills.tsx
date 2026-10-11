@@ -18,7 +18,7 @@ import dotnetLogo from "../assets/icons/dotnet.svg";
 import vscodeLogo from "../assets/icons/vscode.svg";
 import awsLogo from "../assets/icons/aws.svg";
 
-const categories = ["All", "Comfortable", "Working knowledge", "Learning now"] as const;
+const categories = ["All", "Comfortable", "Learning now"] as const;
 
 // Maps each skill's icon key (from portfolio.ts) to its official logo file.
 // "htmlcss" and "network" are special-cased in SkillIcon below.

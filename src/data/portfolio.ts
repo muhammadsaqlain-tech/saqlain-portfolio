@@ -15,7 +15,7 @@
 export type Skill = {
   name: string;
   detail: string;
-  category: "Comfortable" | "Working knowledge" | "Learning now";
+  category: "Comfortable" | "Learning now";
   icon: string;
 };
 
@@ -102,9 +102,7 @@ export const skills: Skill[] = [
   { name: "SQL", detail: "Queries", category: "Comfortable", icon: "sqlserver" },
   { name: "HTML / CSS", detail: "Fundamentals", category: "Comfortable", icon: "htmlcss" },
   { name: "Git", detail: "Version control", category: "Comfortable", icon: "git" },
-  { name: "Linux", detail: "Fundamentals", category: "Working knowledge", icon: "linux" },
-  { name: "Bash", detail: "Basics", category: "Working knowledge", icon: "bash" },
-  { name: "C++", detail: "Fundamentals", category: "Working knowledge", icon: "cplusplus" },
+  { name: "Linux", detail: "Fundamentals", category: "Comfortable", icon: "linux" },
   { name: "AWS", detail: "SAA theory", category: "Learning now", icon: "aws" },
   { name: "Networking", detail: "CCNA", category: "Learning now", icon: "network" },
 ];
