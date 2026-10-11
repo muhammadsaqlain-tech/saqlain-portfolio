@@ -7,6 +7,7 @@ export default function Contact() {
   const hasLinkedin = Boolean(profile.linkedin.trim());
   const subject = encodeURIComponent("Portfolio contact — Muhammad Saqlain");
   const body = encodeURIComponent("Hi Saqlain,\n\nI’m reaching out about...");
+  const gmail = `https://mail.google.com/mail/?view=cm&to=${profile.email}`;
   return (
     <section className="section-shell section-light" id="contact">
       <div className="wrap">
