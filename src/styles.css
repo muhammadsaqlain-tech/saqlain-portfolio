@@ -142,11 +142,11 @@ img { display: block; max-width: 100%; }
 .story-note { display: flex; gap: 12px; margin-top: 25px; padding: 14px; border-radius: 12px; background: var(--accent-soft); color: var(--muted); font-size: .83rem; }
 .story-note svg { color: var(--accent); flex: 0 0 auto; margin-top: 3px; }
 .story-note strong { color: var(--ink); }
-.cert-list { display: flex; flex-direction: column; gap: 8px; margin-top: 22px; }
-.cert-heading { display: inline-flex; align-items: center; gap: 8px; color: var(--faint); font-size: .68rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.cert-list { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(135deg, var(--accent-soft), transparent 60%); }
+.cert-heading { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .cert-heading svg { color: var(--accent); }
-.cert-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 11px 14px; border: 1px solid var(--line); border-radius: 11px; background: var(--bg-2); color: var(--muted); font-size: .82rem; text-decoration: none; transition: border-color .18s ease, transform .18s ease; }
-.cert-link:hover { border-color: color-mix(in srgb, var(--accent) 60%, var(--line)); transform: translateY(-2px); }
+.cert-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 15px; border: 1px solid var(--line); border-radius: 11px; background: var(--panel); color: var(--muted); font-size: .85rem; font-weight: 600; text-decoration: none; transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease; }
+.cert-link:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow); }
 .cert-link strong { color: var(--ink); }
 .cert-link > svg { flex: 0 0 auto; color: var(--accent); }
 .cert-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
