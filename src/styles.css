@@ -54,7 +54,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 button:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 img { display: block; max-width: 100%; }
 .wrap { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
-.section-shell { position: relative; padding: 72px 0; scroll-margin-top: 74px; }
+.section-shell { position: relative; padding: 48px 0; scroll-margin-top: 74px; }
 .section-dark { background: var(--bg); }
 .section-light { background: var(--bg-2); }
 .eyebrow { color: var(--accent); font-size: .72rem; font-weight: 800; letter-spacing: .19em; line-height: 1.2; margin: 0 0 17px; text-transform: uppercase; }
