@@ -112,7 +112,7 @@ export const projects: Project[] = [
     number: "01",
     name: "PhishGuard",
     description:
-      "A static file-intelligence toolkit. Shows SHA-256, MD5 and SHA-1 hashes, real file type, and PDF red flags. Never runs the file. Exports a PDF analyst report with a QR verification code.",
+      "I built a static file-intelligence toolkit. It shows SHA-256, MD5 and SHA-1 hashes, real file type, and PDF red flags. It never runs the file. Findings export as a PDF analyst report with a QR verification code.",
     tags: ["Python", "JavaScript", "Static Analysis", "PDF Reports"],
     note: "Featured project · In progress",
     featured: true,
@@ -121,7 +121,7 @@ export const projects: Project[] = [
     number: "02",
     name: "FastFoodPOS",
     description:
-      "Windows restaurant POS and management app — order billing, menu and inventory tracking, and sales reporting on a SQL Server backend.",
+      "I built a Windows restaurant POS and management app. It handles order billing, menu and inventory tracking, and sales reporting on a SQL Server backend.",
     tags: ["C#", ".NET 8", "WinForms", "SQL Server"],
     visual: "pos",
   },
@@ -129,7 +129,7 @@ export const projects: Project[] = [
     number: "03",
     name: "Student Management System",
     description:
-      "Database-backed system for student records, course enrolment and results — full CRUD workflows and tabular reporting.",
+      "I built a database-backed system for student records, course enrolment and results, with full CRUD workflows and tabular reporting.",
     tags: ["C#", ".NET WinForms", "SQL Server"],
     visual: "student",
   },
@@ -137,7 +137,7 @@ export const projects: Project[] = [
     number: "04",
     name: "Web Application Security Assessments",
     description:
-      "Authorized, passive assessments of live web apps — stack enumeration, security header and HTTPS findings, plus remediation reports.",
+      "I performed authorized, passive assessments of live web apps: stack enumeration, security header and HTTPS findings, with remediation reports.",
     tags: ["Reconnaissance", "Report Writing", "Remediation"],
     note: "Authorized, passive assessment work",
     visual: "audit",
@@ -146,7 +146,7 @@ export const projects: Project[] = [
     number: "05",
     name: "Personal Finance Management System",
     description:
-      "Income and expense tracker with category-wise budgeting, monthly summaries, and spending reports.",
+      "I built an income and expense tracker with category-wise budgeting, monthly summaries, and spending reports.",
     tags: ["C#", ".NET WinForms", "SQL Server"],
     visual: "finance",
   },
