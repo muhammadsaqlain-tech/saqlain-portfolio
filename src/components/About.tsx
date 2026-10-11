@@ -1,18 +1,37 @@
 import { motion } from "motion/react";
 import SectionHeading from "./SectionHeading";
+import portrait from "../assets/saqlain-original.jpg";
 
 export default function About() {
   return (
     <section className="section-shell section-light" id="about">
       <div className="wrap">
-        <SectionHeading title={<>About me</>} description="I’m an undergraduate student growing my technical skills one project and one concept at a time." />
-        <motion.div className="about-clean reveal" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }}>
-          <span className="story-index">01 — THE APPROACH</span>
-          <h3>Build things <span>that work.</span></h3>
-          <p>I’m Muhammad Saqlain, an aspiring cloud engineer and CS undergraduate. I learn by doing — labs, scripts, and small projects that teach me how systems work.</p>
-          <p>I’m also a vibe coder — I use AI tools to prototype faster and learn smarter, then verify everything myself.</p>
-          <p>My work includes PhishGuard, desktop apps in C#/.NET, and passive security assessments.</p>
-        </motion.div>
+        <SectionHeading title={<>About me</>} />
+        <div className="about-split">
+          <motion.div
+            className="about-pic"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <img src={portrait} alt="Portrait of Muhammad Saqlain" loading="lazy" />
+          </motion.div>
+          <motion.div
+            className="about-text"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+          >
+            <span className="story-index">01 — THE APPROACH</span>
+            <h3>Build things <span>that work.</span></h3>
+            <p>I’m Muhammad Saqlain, a CS undergraduate working toward becoming a cloud engineer. I don’t just study concepts — I build small projects that force me to understand how systems actually work, from Python automation scripts and Windows desktop applications to Linux labs and cloud fundamentals.</p>
+            <p>I’m a vibe coder too. I use AI tools to prototype faster, explore ideas, and learn smarter — but I verify everything myself. The AI suggests, I decide. Every line that ships is something I understand.</p>
+            <p>My current focus is the cloud engineering toolkit: Linux, networking, Python, and AWS. Along the way I’ve built PhishGuard (a file-intelligence toolkit), desktop apps in C#/.NET, and performed passive security assessments of live web applications.</p>
+            <p>I document what I learn, stay honest about what I don’t know yet, and keep building.</p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
