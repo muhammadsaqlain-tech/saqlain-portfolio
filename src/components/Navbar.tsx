@@ -5,7 +5,7 @@ import { FiArrowUpRight, FiMenu, FiMoon, FiSun, FiX } from "react-icons/fi";
 const links = [
   ["About", "#about"],
   ["Skills", "#skills"],
-  ["Services", "#services"],
+  ["Certifications", "#certifications"],
   ["Projects", "#projects"],
   ["Journey", "#journey"],
   ["Contact", "#contact"],

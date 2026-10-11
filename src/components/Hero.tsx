@@ -1,5 +1,5 @@
-import { useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { useRef, useState, useEffect } from "react";
+import { motion, AnimatePresence, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { FiArrowDownRight, FiArrowUpRight, FiDownload, FiMapPin, FiTerminal } from "react-icons/fi";
 import portrait from "../assets/saqlain-original.jpg";
 import { profile } from "../data/portfolio";
@@ -13,7 +13,18 @@ export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   // Gentle parallax: the portrait drifts slightly slower than the scroll.
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
-  const visualY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 70]);
+  const visualY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 220]);
+  const visualScale = useTransform(scrollYProgress, [0, 1], [1, reduce ? 1 : 0.92]);
+  const visualOpacity = useTransform(scrollYProgress, [0, 0.9], [1, reduce ? 1 : 0.35]);
+
+  const roles = ["Python developer", "Cloud engineer", "Linux", "Networking"];
+  const [roleIndex, setRoleIndex] = useState(0);
+  const reduceMotion = useReducedMotion();
+  useEffect(() => {
+    if (reduceMotion) return;
+    const id = setInterval(() => setRoleIndex((i) => (i + 1) % roles.length), 2600);
+    return () => clearInterval(id);
+  }, [reduceMotion]);
 
   return (
     <section className="hero section-shell" id="home" ref={sectionRef}>
@@ -37,7 +48,18 @@ export default function Hero() {
             </span>
           </h1>
           <motion.p className="hero-role" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.34 }}>
-            Aspiring cloud engineer <i>·</i> building practical skills
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={roleIndex}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.35 }}
+                style={{ display: "inline-block" }}
+              >
+                {roles[roleIndex]}
+              </motion.span>
+            </AnimatePresence>
           </motion.p>
           <motion.p className="hero-description" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.55 }}>
             I build small software projects to understand how systems work, from Python tools and desktop applications to Linux and cloud fundamentals.
@@ -52,7 +74,7 @@ export default function Hero() {
             <span><FiTerminal /> Learning in public</span>
           </motion.div>
         </div>
-        <motion.div className="hero-visual" style={{ y: visualY }} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.75, delay: 0.2 }}>
+        <motion.div className="hero-visual" style={{ y: visualY, scale: visualScale, opacity: visualOpacity }} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.75, delay: 0.2 }}>
           <div className="portrait-halo" />
           <div className="portrait-grid" aria-hidden="true" />
           {/* Portrait: plain frame with a single entrance animation (no looping float — keeps it calm) */}
