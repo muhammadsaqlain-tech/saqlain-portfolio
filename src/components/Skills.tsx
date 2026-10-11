@@ -73,14 +73,14 @@ export default function Skills() {
           </div>
           <span className="skill-count">{String(visible.length).padStart(2, "0")} technologies / topics</span>
         </div>
-        <motion.div layout={!reduce} className="skills-grid">
+        <motion.div layout={!reduce} className="skills-grid" transition={reduce ? undefined : { type: "spring", stiffness: 350, damping: 32 }}>
           <AnimatePresence mode="popLayout">
             {visible.map((skill, index) => (
               <motion.article className="skill-card" key={skill.name} layout={!reduce}
-                initial={reduce ? false : { opacity: 0, y: 12, scale: 0.98 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={reduce ? { opacity: 0 } : { opacity: 0, y: 8, scale: 0.98 }}
-                transition={{ duration: 0.22, delay: reduce ? 0 : Math.min(index * 0.025, 0.18) }}>
+                initial={reduce ? false : { opacity: 0, scale: 0.85, filter: "blur(4px)" }}
+                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                exit={reduce ? { opacity: 0 } : { opacity: 0, scale: 0.85, filter: "blur(4px)" }}
+                transition={reduce ? { duration: 0.15 } : { type: "spring", stiffness: 400, damping: 30, delay: Math.min(index * 0.02, 0.12) }}>
                 <span className={`skill-mark skill-mark-${skill.icon}`} aria-hidden="true">
                   <SkillIcon icon={skill.icon} />
                 </span>
