@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { FiArrowDownRight, FiArrowUpRight, FiDownload, FiMapPin, FiShield, FiTerminal } from "react-icons/fi";
 import portrait from "../assets/saqlain-original.jpg";
@@ -14,18 +14,6 @@ export default function Hero() {
   // Gentle parallax: the portrait drifts slightly slower than the scroll.
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
   const visualY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 70]);
-
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
-  const reduceMotion = useReducedMotion();
-
-  const handleTilt = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (reduceMotion) return;
-    const rect = e.currentTarget.getBoundingClientRect();
-    const px = (e.clientX - rect.left) / rect.width - 0.5;
-    const py = (e.clientY - rect.top) / rect.height - 0.5;
-    setTilt({ x: py * -14, y: px * 14 });
-  };
-  const resetTilt = () => setTilt({ x: 0, y: 0 });
 
   return (
     <section className="hero section-shell" id="home" ref={sectionRef}>
@@ -68,8 +56,7 @@ export default function Hero() {
           <div className="portrait-halo" />
           <div className="portrait-grid" aria-hidden="true" />
           {/* Portrait: plain frame with a single entrance animation (no looping float — keeps it calm) */}
-          <div className="portrait-frame" onMouseMove={handleTilt} onMouseLeave={resetTilt}
-            style={{ transform: `perspective(800px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`, transition: "transform 0.15s ease-out" }}>
+          <div className="portrait-frame">
             <img src={portrait} alt="Portrait of Muhammad Saqlain" fetchPriority="high" />
           </div>
           <div className="portrait-label"><span className="label-mark"><FiShield /></span><span><strong>Build with purpose</strong><small>Learn · Test · Improve</small></span></div>

@@ -24,7 +24,7 @@ export default function Contact() {
           </div>
           <div className="contact-details reveal">
             <a className="contact-detail" href={gmail} target="_blank" rel="noreferrer"><span className="contact-detail-icon"><FiMail /></span><span><small>EMAIL</small><strong>{profile.email}</strong></span><FiArrowUpRight className="contact-detail-arrow" /></a>
-            <div className="contact-detail"><span className="contact-detail-icon"><FiMapPin /></span><span><small>LOCATION</small><strong>{profile.location} · Open to remote</strong></span></div>
+            <div className="contact-detail"><span className="contact-detail-icon"><FiMapPin /></span><span><small>LOCATION</small><strong>{profile.location}</strong></span></div>
             {hasGithub && <a className="contact-detail" href={profile.github} target="_blank" rel="noreferrer"><span className="contact-detail-icon"><FiGithub /></span><span><small>GITHUB</small><strong>View repositories</strong></span><FiArrowUpRight className="contact-detail-arrow" /></a>}
             {hasLinkedin && <a className="contact-detail" href={profile.linkedin} target="_blank" rel="noreferrer"><span className="contact-detail-icon"><FiLinkedin /></span><span><small>LINKEDIN</small><strong>Connect professionally</strong></span><FiArrowUpRight className="contact-detail-arrow" /></a>}
           </div>
