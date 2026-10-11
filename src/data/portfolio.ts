@@ -36,7 +36,7 @@ export const profile = {
   name: "Muhammad Saqlain",
   firstName: "Muhammad",
   lastName: "Saqlain",
-  role: "Aspiring Python Developer",
+  role: "Aspiring Cloud Engineer",
   email: "muhammadsaqlain4787@gmail.com",
   location: "Faisalabad, Pakistan",
   github: "",
@@ -80,9 +80,9 @@ export const services: Service[] = [
     icon: "python",
   },
   {
-    title: "IT Support",
-    detail: "Troubleshooting, system setup, and user support — Google-certified fundamentals.",
-    icon: "support",
+    title: "Desktop Apps",
+    detail: "Windows desktop applications in C#/.NET — POS systems, management tools, data-backed apps.",
+    icon: "desktop",
   },
   {
     title: "Security Assessments",
@@ -175,9 +175,9 @@ export const journey = [
   },
   {
     title: "Learning & development",
-    organization: "Linux · Python · AWS theory · networking",
+    organization: "AWS · Linux · networking · Python",
     period: "Ongoing",
     status: "In progress",
-    detail: "Developing a foundation for IT support and cloud security roles.",
+    detail: "Building a foundation for cloud engineering — theory, labs, and hands-on practice.",
   },
 ];

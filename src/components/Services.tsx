@@ -1,11 +1,12 @@
 import { motion } from "motion/react";
-import { FiCode, FiTool, FiShield, FiLayout } from "react-icons/fi";
+import { FiCode, FiTool, FiShield, FiLayout, FiMonitor } from "react-icons/fi";
 import SectionHeading from "./SectionHeading";
 import { services } from "../data/portfolio";
 
 const serviceIcons: Record<string, React.ReactNode> = {
   python: <FiCode />,
   support: <FiTool />,
+  desktop: <FiMonitor />,
   shield: <FiShield />,
   web: <FiLayout />,
 };
