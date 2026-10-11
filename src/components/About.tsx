@@ -1,15 +1,26 @@
 import { motion } from "motion/react";
+import { useRef } from "react";
 import SectionHeading from "./SectionHeading";
 import portrait from "../assets/saqlain-original.jpg";
 
 export default function About() {
+  const picRef = useRef<HTMLDivElement>(null);
+
+  const handleSpot = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = picRef.current;
+    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const rect = el.getBoundingClientRect();
+    el.style.setProperty("--mx", `${e.clientX - rect.left}px`);
+    el.style.setProperty("--my", `${e.clientY - rect.top}px`);
+  };
   return (
     <section className="section-shell section-light" id="about">
       <div className="wrap">
         <SectionHeading title={<>About me</>} />
         <div className="about-split">
-          <div className="about-pic">
-            <img src={portrait} alt="Portrait of Muhammad Saqlain" loading="lazy" />
+          <div className="about-pic about-spotlight" ref={picRef} onMouseMove={handleSpot}>
+            <img className="spot-bw" src={portrait} alt="Portrait of Muhammad Saqlain" loading="lazy" />
+            <img className="spot-color" src={portrait} alt="" aria-hidden="true" />
           </div>
           <motion.div
             className="about-text"
