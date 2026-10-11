@@ -91,7 +91,7 @@ img { display: block; max-width: 100%; }
 .icon-button:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 .menu-button, .mobile-menu { display: none; }
 /* Hero */
-.hero { min-height: 740px; min-height: min(850px, 100svh); display: flex; flex-direction: column; justify-content: center; padding-top: 136px; padding-bottom: 28px; overflow: hidden; }
+.hero { min-height: 740px; min-height: min(850px, 100svh); display: flex; flex-direction: column; justify-content: center; padding-top: 88px; padding-bottom: 28px; overflow: hidden; }
 .hero::before { content: ""; position: absolute; width: 760px; height: 680px; right: -120px; top: 0; background: radial-gradient(ellipse, rgba(38, 106, 215, .17), transparent 67%); pointer-events: none; }
 .hero::after { content: ""; position: absolute; left: -300px; bottom: -430px; width: 600px; height: 600px; border-radius: 50%; border: 1px solid var(--line); box-shadow: 0 0 0 55px rgba(96, 165, 250, .018), 0 0 0 110px rgba(96, 165, 250, .018); pointer-events: none; }
 .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.08fr .92fr; gap: 40px; align-items: center; flex: 1; }
