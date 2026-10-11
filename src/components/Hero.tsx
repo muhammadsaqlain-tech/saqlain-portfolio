@@ -19,12 +19,11 @@ export default function Hero() {
 
   const roles = ["Python developer", "Cloud engineer", "Linux", "Networking"];
   const [roleIndex, setRoleIndex] = useState(0);
-  const reduceMotion = useReducedMotion();
   useEffect(() => {
-    if (reduceMotion) return;
+    if (reduce) return;
     const id = setInterval(() => setRoleIndex((i) => (i + 1) % roles.length), 2600);
     return () => clearInterval(id);
-  }, [reduceMotion]);
+  }, [reduce]);
 
   return (
     <section className="hero section-shell" id="home" ref={sectionRef}>
