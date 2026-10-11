@@ -237,6 +237,8 @@ img { display: block; max-width: 100%; }
 .project-note { color: var(--warm); font-size: .72rem; margin: -5px 0 13px; }
 .project-card .tag-row { margin-top: auto; }
 .project-card-bottom { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--line); color: var(--faint); font-size: .7rem; }
+.project-link { display: inline-flex; align-items: center; gap: 4px; color: var(--accent); font-size: .8rem; font-weight: 700; text-decoration: none; }
+.project-link:hover { text-decoration: underline; }
 .project-arrow { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-size: 1rem; }
 .projects-footnote { display: flex; align-items: flex-start; gap: 10px; margin: 22px 0 0; color: var(--faint); font-size: .77rem; }
 .projects-footnote svg { flex: 0 0 auto; margin-top: 4px; color: var(--accent); }

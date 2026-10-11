@@ -61,7 +61,7 @@ export default function Projects() {
               <p>{project.description}</p>
               {project.note && <span className="project-note">{project.note}</span>}
               <div className="tag-row">{project.tags.map((tag) => <span className="tag" key={tag}>{tag}</span>)}</div>
-              <div className="project-card-bottom"><span>Personal project / study</span><span className="project-arrow" aria-hidden="true"><FiArrowUpRight /></span></div>
+              <div className="project-card-bottom"><span>Personal project / study</span>{project.href ? (<a className="project-link" href={project.href} target="_blank" rel="noreferrer">View code <FiArrowUpRight /></a>) : (<span className="project-arrow" aria-hidden="true"><FiArrowUpRight /></span>)}</div>
             </motion.article>
           ))}
         </div>
