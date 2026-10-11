@@ -106,6 +106,9 @@ img { display: block; max-width: 100%; }
 .mask-inner { display: inline-block; will-change: transform; }
 .hero-accent { background: linear-gradient(115deg, var(--accent) 15%, var(--accent-2) 85%); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .hero-role { margin: 20px 0 13px; color: var(--ink); font-size: 1rem; font-weight: 700; line-height: 1.6; }
+.hero-role.typewriter { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; letter-spacing: -.02em; min-height: 1.4em; }
+.type-cursor { display: inline-block; width: 3px; height: 1em; margin-left: 3px; vertical-align: -0.12em; background: var(--accent); animation: blink 1s step-end infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 .hero-role i { color: var(--accent); font-style: normal; padding: 0 4px; }
 .hero-description { max-width: 590px; margin: 0; color: var(--muted); font-size: 1.02rem; line-height: 1.8; }
 .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 29px; }

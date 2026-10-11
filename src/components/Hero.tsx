@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { motion, AnimatePresence, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { FiArrowDownRight, FiArrowUpRight, FiDownload, FiMapPin, FiTerminal } from "react-icons/fi";
 import portrait from "../assets/saqlain-original.jpg";
 import { profile } from "../data/portfolio";
@@ -18,11 +18,27 @@ export default function Hero() {
   const visualOpacity = useTransform(scrollYProgress, [0, 0.9], [1, reduce ? 1 : 0.35]);
 
   const roles = ["Python developer", "Cloud engineer", "Linux", "Networking"];
-  const [roleIndex, setRoleIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
   useEffect(() => {
-    if (reduce) return;
-    const id = setInterval(() => setRoleIndex((i) => (i + 1) % roles.length), 2600);
-    return () => clearInterval(id);
+    if (reduce) { setDisplayText(roles[0]); return; }
+    let roleIdx = 0, charIdx = 0, deleting = false;
+    let timeout: ReturnType<typeof setTimeout>;
+    const tick = () => {
+      const word = roles[roleIdx];
+      if (!deleting) {
+        charIdx++;
+        setDisplayText(word.slice(0, charIdx));
+        if (charIdx === word.length) { deleting = true; timeout = setTimeout(tick, 1600); return; }
+        timeout = setTimeout(tick, 70);
+      } else {
+        charIdx--;
+        setDisplayText(word.slice(0, charIdx));
+        if (charIdx === 0) { deleting = false; roleIdx = (roleIdx + 1) % roles.length; timeout = setTimeout(tick, 400); return; }
+        timeout = setTimeout(tick, 35);
+      }
+    };
+    tick();
+    return () => clearTimeout(timeout);
   }, [reduce]);
 
   return (
@@ -46,19 +62,8 @@ export default function Hero() {
               </motion.span>
             </span>
           </h1>
-          <motion.p className="hero-role" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.34 }}>
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={roleIndex}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.35 }}
-                style={{ display: "inline-block" }}
-              >
-                {roles[roleIndex]}
-              </motion.span>
-            </AnimatePresence>
+          <motion.p className="hero-role typewriter" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.34 }}>
+            <span>{displayText}</span><span className="type-cursor" aria-hidden="true" />
           </motion.p>
           <motion.p className="hero-description" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.55 }}>
             I build small software projects to understand how systems work, from Python tools and desktop applications to Linux and cloud fundamentals.
