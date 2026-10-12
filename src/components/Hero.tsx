@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { FiArrowDownRight, FiArrowUpRight, FiDownload, FiMapPin, FiTerminal } from "react-icons/fi";
 import portrait from "../assets/saqlain-original.jpg";
+import portraitWebp from "../assets/saqlain-original.webp";
 import { profile } from "../data/portfolio";
 
 const ROLES = ["Python developer", "Cloud engineer", "Linux", "Networking"];
@@ -78,7 +79,10 @@ export default function Hero() {
           <div className="portrait-grid" aria-hidden="true" />
           {/* Portrait: plain frame with a single entrance animation (no looping float — keeps it calm) */}
           <div className="portrait-frame">
-            <img src={portrait} alt="Portrait of Muhammad Saqlain" fetchPriority="high" />
+            <picture>
+              <source srcSet={portraitWebp} type="image/webp" />
+              <img src={portrait} alt="Portrait of Muhammad Saqlain" fetchPriority="high" />
+            </picture>
           </div>
           <div className="orbit orbit-one" />
           <div className="orbit orbit-two" />

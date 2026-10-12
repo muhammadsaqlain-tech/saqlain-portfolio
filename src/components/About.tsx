@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { useRef } from "react";
 import SectionHeading from "./SectionHeading";
 import portrait from "../assets/saqlain-original.jpg";
+import portraitWebp from "../assets/saqlain-original.webp";
 
 export default function About() {
   const picRef = useRef<HTMLDivElement>(null);
@@ -19,8 +20,14 @@ export default function About() {
         <SectionHeading title={<>About me</>} />
         <div className="about-split">
           <div className="about-pic about-spotlight" ref={picRef} onMouseMove={handleSpot}>
-            <img className="spot-bw" src={portrait} alt="Portrait of Muhammad Saqlain" loading="lazy" />
-            <img className="spot-color" src={portrait} alt="" aria-hidden="true" />
+            <picture>
+              <source srcSet={portraitWebp} type="image/webp" />
+              <img className="spot-bw" src={portrait} alt="Portrait of Muhammad Saqlain" loading="lazy" />
+            </picture>
+            <picture aria-hidden="true">
+              <source srcSet={portraitWebp} type="image/webp" />
+              <img className="spot-color" src={portrait} alt="" />
+            </picture>
           </div>
           <motion.div
             className="about-text"
@@ -30,7 +37,7 @@ export default function About() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
           >
             <p>I’m Muhammad Saqlain, a CS undergraduate working toward becoming a cloud engineer. I don’t just study concepts — I build small projects that force me to understand how systems actually work, from Python automation scripts and Windows desktop applications to Linux labs and cloud fundamentals.</p>
-            <p>I’m a vibe coder too. I use AI tools to prototype faster, explore ideas, and learn smarter — but I verify everything myself. The AI suggests, I decide. Every line that ships is something I understand.</p>
+            <p>I use AI tools to speed up prototyping, then review, test, and debug everything myself. The AI suggests — I decide. Every line that ships is something I understand.</p>
             <p>My current focus is the cloud engineering toolkit: Linux, networking, Python, and AWS. Along the way I’ve built PhishGuard (a file-intelligence toolkit), desktop apps in C#/.NET, and performed passive security assessments of live web applications.</p>
             <p><strong>Every project makes me better — and I’m just getting started.</strong></p>
           </motion.div>
