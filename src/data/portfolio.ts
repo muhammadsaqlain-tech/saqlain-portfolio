@@ -73,29 +73,6 @@ export type Service = {
   icon: string;
 };
 
-export const services: Service[] = [
-  {
-    title: "Python Development",
-    detail: "Scripts, automation tools, and file-analysis utilities — built, tested, and documented.",
-    icon: "python",
-  },
-  {
-    title: "Desktop Apps",
-    detail: "Windows desktop applications in C#/.NET — POS systems, management tools, data-backed apps.",
-    icon: "desktop",
-  },
-  {
-    title: "Security Assessments",
-    detail: "Passive, read-only website audits with severity-rated findings and fix guidance.",
-    icon: "shield",
-  },
-  {
-    title: "Web Development",
-    detail: "Responsive single-page sites with clean layout and honest, accessible design.",
-    icon: "web",
-  },
-];
-
 export const skills: Skill[] = [
   { name: "Python", detail: "Scripting", category: "Comfortable", icon: "python" },
   { name: "C#", detail: ".NET / WinForms", category: "Comfortable", icon: "csharp" },

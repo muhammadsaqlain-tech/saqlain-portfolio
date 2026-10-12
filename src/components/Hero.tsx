@@ -3,6 +3,8 @@ import { motion, useReducedMotion } from "motion/react";
 import { FiArrowDownRight, FiArrowUpRight, FiDownload, FiMapPin, FiTerminal } from "react-icons/fi";
 import portrait from "../assets/saqlain-original.jpg";
 import { profile } from "../data/portfolio";
+
+const ROLES = ["Python developer", "Cloud engineer", "Linux", "Networking"];
 import Magnetic from "./Magnetic";
 
 // Easing that feels hand-tuned: fast start, soft landing.
@@ -14,14 +16,13 @@ export default function Hero() {
   // Gentle parallax: the portrait drifts slightly slower than the scroll.
 
 
-  const roles = ["Python developer", "Cloud engineer", "Linux", "Networking"];
   const [displayText, setDisplayText] = useState("");
   useEffect(() => {
-    if (reduce) { setDisplayText(roles[0]); return; }
+    if (reduce) { setDisplayText(ROLES[0]); return; }
     let roleIdx = 0, charIdx = 0, deleting = false;
     let timeout: ReturnType<typeof setTimeout>;
     const tick = () => {
-      const word = roles[roleIdx];
+      const word = ROLES[roleIdx];
       if (!deleting) {
         charIdx++;
         setDisplayText(word.slice(0, charIdx));
@@ -30,7 +31,7 @@ export default function Hero() {
       } else {
         charIdx--;
         setDisplayText(word.slice(0, charIdx));
-        if (charIdx === 0) { deleting = false; roleIdx = (roleIdx + 1) % roles.length; timeout = setTimeout(tick, 400); return; }
+        if (charIdx === 0) { deleting = false; roleIdx = (roleIdx + 1) % ROLES.length; timeout = setTimeout(tick, 400); return; }
         timeout = setTimeout(tick, 35);
       }
     };

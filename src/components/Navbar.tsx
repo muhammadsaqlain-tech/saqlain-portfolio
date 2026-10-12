@@ -18,7 +18,8 @@ export default function Navbar() {
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem("saqlain-theme");
+    let saved: string | null = null;
+    try { saved = localStorage.getItem("saqlain-theme"); } catch { /* private mode */ }
     const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
     const next = saved ? saved === "light" : prefersLight;
     setLight(next);
@@ -26,7 +27,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const sections = ["home", "about", "skills", "projects", "journey", "contact"]
+    const sections = ["home", "about", "skills", "certifications", "projects", "journey", "contact"]
       .map((id) => document.getElementById(id))
       .filter((node): node is HTMLElement => Boolean(node));
     const observer = new IntersectionObserver(
@@ -56,7 +57,7 @@ export default function Navbar() {
     const next = !light;
     setLight(next);
     document.documentElement.dataset.theme = next ? "light" : "dark";
-    localStorage.setItem("saqlain-theme", next ? "light" : "dark");
+    try { localStorage.setItem("saqlain-theme", next ? "light" : "dark"); } catch { /* private mode */ }
   }
 
   const navLinks = (
