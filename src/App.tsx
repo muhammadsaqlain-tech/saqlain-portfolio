@@ -12,6 +12,14 @@ const Journey = lazy(() => import("./components/Journey"));
 const Contact = lazy(() => import("./components/Contact"));
 const Footer = lazy(() => import("./components/Footer"));
 
+function SectionLoader() {
+  return (
+    <div className="section-loader" aria-hidden="true" aria-label="Loading section">
+      <span className="loader-spinner" />
+    </div>
+  );
+}
+
 export default function App() {
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
@@ -44,7 +52,7 @@ export default function App() {
       <Navbar />
       <main id="main-content">
         <Hero />
-        <Suspense fallback={null}>
+        <Suspense fallback={<SectionLoader />}>
           <Marquee />
           <About />
           <Skills />
@@ -54,7 +62,7 @@ export default function App() {
           <Contact />
         </Suspense>
       </main>
-      <Suspense fallback={null}>
+      <Suspense fallback={<SectionLoader />}>
         <Footer />
       </Suspense>
       {!reduceMotion && <motion.div className="scroll-progress" aria-hidden="true" style={{ scaleX: progress }} />}
