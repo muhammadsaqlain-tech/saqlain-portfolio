@@ -73,7 +73,6 @@ export default function Hero() {
             <Magnetic><a className="button button-primary" href="#projects">Explore my work <FiArrowUpRight /></a></Magnetic>
             <Magnetic><a className="button button-secondary" href="#contact">Get in touch <FiArrowDownRight /></a></Magnetic>
             <Magnetic><a className="button button-secondary" href={profile.resume} target="_blank" rel="noreferrer">Resume <FiArrowUpRight /></a></Magnetic>
-            <Magnetic><a className="button button-icon" href={profile.resume} download="Muhammad-Saqlain-Resume.pdf" aria-label="Download resume"><FiDownload /></a></Magnetic>
           </motion.div>
           <motion.div className="hero-meta" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.62 }}>
             <span><FiMapPin /> {profile.location}</span>

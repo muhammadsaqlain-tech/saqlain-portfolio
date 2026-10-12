@@ -20,7 +20,6 @@ export default function Contact() {
             <div className="contact-actions">
               <a className="button button-primary" href={`${mailto}?subject=${subject}&body=${body}`}>Write an email <FiArrowUpRight /></a>
               <a className="button button-secondary" href={profile.resume} target="_blank" rel="noreferrer"><FiArrowUpRight /> Resume</a>
-              <a className="button button-icon" href={profile.resume} download="Muhammad-Saqlain-Resume.pdf" aria-label="Download resume"><FiDownload /></a>
             </div>
           </div>
           <div className="contact-details reveal">
