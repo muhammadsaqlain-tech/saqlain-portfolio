@@ -285,11 +285,6 @@ img { display: block; max-width: 100%; }
 
 
 
-/* Lazy section loading state */
-.section-loader { min-height: 50vh; display: grid; place-items: center; }
-.loader-spinner { width: 36px; height: 36px; border-radius: 50%; border: 3px solid var(--line); border-top-color: var(--accent); animation: spin .8s linear infinite; }
-@keyframes spin { to { transform: rotate(360deg); } }
-@media (prefers-reduced-motion: reduce) { .loader-spinner { animation: none; border-top-color: var(--line); } }
 
 /* Journey */
 .journey-layout { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(45px, 8vw, 115px); align-items: start; }

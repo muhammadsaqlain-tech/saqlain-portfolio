@@ -1,24 +1,15 @@
-import { Suspense, lazy, useEffect } from "react";
+import { useEffect } from "react";
 import { motion, useReducedMotion, useScroll, useSpring } from "motion/react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-// Below-fold sections lazy-loaded: less JS blocks the first paint (better TBT/SI)
-const Marquee = lazy(() => import("./components/Marquee"));
-const About = lazy(() => import("./components/About"));
-const Skills = lazy(() => import("./components/Skills"));
-const Certifications = lazy(() => import("./components/Certifications"));
-const Projects = lazy(() => import("./components/Projects"));
-const Journey = lazy(() => import("./components/Journey"));
-const Contact = lazy(() => import("./components/Contact"));
-const Footer = lazy(() => import("./components/Footer"));
-
-function SectionLoader() {
-  return (
-    <div className="section-loader" aria-hidden="true" aria-label="Loading section">
-      <span className="loader-spinner" />
-    </div>
-  );
-}
+import Marquee from "./components/Marquee";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Certifications from "./components/Certifications";
+import Projects from "./components/Projects";
+import Journey from "./components/Journey";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default function App() {
   const reduceMotion = useReducedMotion();
@@ -52,19 +43,15 @@ export default function App() {
       <Navbar />
       <main id="main-content">
         <Hero />
-        <Suspense fallback={<SectionLoader />}>
-          <Marquee />
-          <About />
-          <Skills />
-          <Certifications />
-          <Projects />
-          <Journey />
-          <Contact />
-        </Suspense>
+        <Marquee />
+        <About />
+        <Skills />
+        <Certifications />
+        <Projects />
+        <Journey />
+        <Contact />
       </main>
-      <Suspense fallback={<SectionLoader />}>
-        <Footer />
-      </Suspense>
+      <Footer />
       {!reduceMotion && <motion.div className="scroll-progress" aria-hidden="true" style={{ scaleX: progress }} />}
     </>
   );
