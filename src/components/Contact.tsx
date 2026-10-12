@@ -7,7 +7,7 @@ export default function Contact() {
   const hasLinkedin = Boolean(profile.linkedin.trim());
   const subject = encodeURIComponent("Portfolio contact — Muhammad Saqlain");
   const body = encodeURIComponent("Hi Saqlain,\n\nI’m reaching out about...");
-  const gmail = `https://mail.google.com/mail/?view=cm&to=${profile.email}`;
+  const mailto = `mailto:${profile.email}`;
   return (
     <section className="section-shell section-light" id="contact">
       <div className="wrap">
@@ -18,12 +18,12 @@ export default function Contact() {
             <h3>Have something in mind?</h3>
             <p>Share a little context and I’ll get back to you when I can. This button opens Gmail; this static site does not store messages.</p>
             <div className="contact-actions">
-              <a className="button button-primary" href={`${gmail}&su=${subject}&body=${body}`} target="_blank" rel="noreferrer">Write an email <FiArrowUpRight /></a>
+              <a className="button button-primary" href={`${mailto}?subject=${subject}&body=${body}`}>Write an email <FiArrowUpRight /></a>
               <a className="button button-secondary" href={profile.resume} download="Muhammad-Saqlain-Resume.pdf"><FiDownload /> Resume</a>
             </div>
           </div>
           <div className="contact-details reveal">
-            <a className="contact-detail" href={gmail} target="_blank" rel="noreferrer"><span className="contact-detail-icon"><FiMail /></span><span><small>EMAIL</small><strong>{profile.email}</strong></span><FiArrowUpRight className="contact-detail-arrow" /></a>
+            <a className="contact-detail" href={mailto}><span className="contact-detail-icon"><FiMail /></span><span><small>EMAIL</small><strong>{profile.email}</strong></span><FiArrowUpRight className="contact-detail-arrow" /></a>
             <div className="contact-detail"><span className="contact-detail-icon"><FiMapPin /></span><span><small>LOCATION</small><strong>{profile.location}</strong></span></div>
             {hasGithub && <a className="contact-detail" href={profile.github} target="_blank" rel="noreferrer"><span className="contact-detail-icon"><FiGithub /></span><span><small>GITHUB</small><strong>View repositories</strong></span><FiArrowUpRight className="contact-detail-arrow" /></a>}
             {hasLinkedin && <a className="contact-detail" href={profile.linkedin} target="_blank" rel="noreferrer"><span className="contact-detail-icon"><FiLinkedin /></span><span><small>LINKEDIN</small><strong>Connect professionally</strong></span><FiArrowUpRight className="contact-detail-arrow" /></a>}
