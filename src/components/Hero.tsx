@@ -1,5 +1,5 @@
-import { useRef } from "react";
-import { motion } from "motion/react";
+import { useRef, useState, useEffect } from "react";
+import { motion, useReducedMotion } from "motion/react";
 import { FiArrowDownRight, FiArrowUpRight, FiDownload, FiMapPin, FiTerminal } from "react-icons/fi";
 import portrait from "../assets/saqlain-original.jpg";
 import portraitWebp from "../assets/saqlain-original.webp";
@@ -10,11 +10,37 @@ import Magnetic from "./Magnetic";
 // Easing that feels hand-tuned: fast start, soft landing.
 const EASE = [0.2, 0.7, 0.2, 1] as const;
 
+const ROLES = ["Python developer", "Cloud engineer", "Linux", "Networking"];
+
 export default function Hero() {
+  const reduce = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
   // Gentle parallax: the portrait drifts slightly slower than the scroll.
 
 
+
+  const [displayText, setDisplayText] = useState("");
+  useEffect(() => {
+    if (reduce) { setDisplayText(ROLES[0]); return; }
+    let roleIdx = 0, charIdx = 0, deleting = false;
+    let timeout: ReturnType<typeof setTimeout>;
+    const tick = () => {
+      const word = ROLES[roleIdx];
+      if (!deleting) {
+        charIdx++;
+        setDisplayText(word.slice(0, charIdx));
+        if (charIdx === word.length) { deleting = true; timeout = setTimeout(tick, 1600); return; }
+        timeout = setTimeout(tick, 70);
+      } else {
+        charIdx--;
+        setDisplayText(word.slice(0, charIdx));
+        if (charIdx === 0) { deleting = false; roleIdx = (roleIdx + 1) % ROLES.length; timeout = setTimeout(tick, 400); return; }
+        timeout = setTimeout(tick, 35);
+      }
+    };
+    tick();
+    return () => clearTimeout(timeout);
+  }, [reduce]);
 
   return (
     <section className="hero section-shell" id="home" ref={sectionRef}>
@@ -37,8 +63,8 @@ export default function Hero() {
               </motion.span>
             </span>
           </h1>
-          <motion.p className="hero-role" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.34 }}>
-            Aspiring Cloud Engineer
+          <motion.p className="hero-role typewriter" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.34 }}>
+            <span>{displayText}</span><span className="type-cursor" aria-hidden="true" />
           </motion.p>
           <motion.p className="hero-availability" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.42 }}>
             <span className="availability-dot" aria-hidden="true" />{profile.availability}
