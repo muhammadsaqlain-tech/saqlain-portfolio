@@ -1,4 +1,4 @@
-import { FiArrowUpRight, FiDownload, FiGithub, FiLinkedin, FiMail, FiMapPin, FiSend } from "react-icons/fi";
+import { FiArrowUpRight, FiGithub, FiLinkedin, FiMail, FiMapPin, FiSend } from "react-icons/fi";
 import SectionHeading from "./SectionHeading";
 import { profile } from "../data/portfolio";
 

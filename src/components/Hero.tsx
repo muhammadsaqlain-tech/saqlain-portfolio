@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import { FiArrowDownRight, FiArrowUpRight, FiDownload, FiMapPin, FiTerminal } from "react-icons/fi";
+import { FiArrowDownRight, FiArrowUpRight, FiMapPin, FiTerminal } from "react-icons/fi";
 import portrait from "../assets/saqlain-original.jpg";
 import portraitWebp from "../assets/saqlain-original.webp";
 import { profile } from "../data/portfolio";
