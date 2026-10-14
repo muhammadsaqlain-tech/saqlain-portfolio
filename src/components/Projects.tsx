@@ -31,6 +31,11 @@ export default function Projects() {
                 <li>Reports uncertainty clearly when an external lookup is unavailable.</li>
               </ul>
               <div className="tag-row">{featured.tags.map((tag) => <span className="tag" key={tag}>{tag}</span>)}</div>
+              {featured.href && (
+                <div className="featured-actions">
+                  <a className="project-link" href={featured.href} target="_blank" rel="noreferrer">View code <FiArrowUpRight /></a>
+                </div>
+              )}
             </div>
             <div className="terminal-card" aria-label="Illustrative PhishGuard terminal output">
               <div className="terminal-scan" aria-hidden="true" />
