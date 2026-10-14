@@ -37,10 +37,12 @@ The production website is generated in `dist/`.
 ```text
 saqlain-portfolio/
 ├── public/
+│   ├── 404.html
 │   ├── favicon.svg
+│   ├── og-image.jpg
 │   ├── robots.txt
 │   ├── saqlain-resume.pdf        # real resume, served as a download
-│   └── _headers
+│   └── sitemap.xml
 ├── src/
 │   ├── assets/
 │   │   ├── saqlain-original.jpg   # hero portrait (real photo; keep under ~150KB)
@@ -53,6 +55,7 @@ saqlain-portfolio/
 │   │   ├── SectionHeading.tsx
 │   │   ├── About.tsx
 │   │   ├── Skills.tsx             # filter tabs + cursor spotlight cards
+│   │   ├── Certifications.tsx     # verified credential cards with Coursera links
 │   │   ├── Projects.tsx           # abstract cover art per project (never fake screenshots)
 │   │   ├── Journey.tsx            # timeline line draws itself while scrolling
 │   │   ├── Contact.tsx
@@ -65,6 +68,7 @@ saqlain-portfolio/
 ├── index.html
 ├── package.json
 ├── tsconfig*.json
+├── vercel.json                  # security headers for Vercel
 └── vite.config.ts
 ```
 
@@ -87,7 +91,7 @@ This is a static site — `npm run build` outputs everything into `dist/`.
 **Option A — Vercel (recommended, config included):**
 1. Push this folder to a GitHub repository.
 2. Go to vercel.com → Add New → Project → import the repo.
-3. Build command `npm run build`, output directory `dist` (already set in `vercel.json`).
+3. Vercel auto-detects Vite: build command `npm run build`, output directory `dist`. (`vercel.json` in this repo only sets security headers.)
 4. Social preview (`og:url` / `og:image`) is already configured for https://muhammadsaqlain.net — update the domain in `index.html` if you ever change it, then redeploy.
 
 **Option B — any static host (Netlify, Cloudflare Pages, GitHub Pages):**
@@ -100,7 +104,7 @@ This is a static site — `npm run build` outputs everything into `dist/`.
 - No API keys or secrets are used in the browser.
 - External links use `rel="noreferrer"` where applicable.
 - There is no fake contact form or client-side claim that a message was stored.
-- Security headers are provided for Vercel and static hosts that support `_headers`. Configure equivalent headers on any other host.
+- Security headers are provided in `vercel.json` (Vercel). Configure equivalent headers on any other host.
 - For a future backend, validate inputs server-side, rate-limit endpoints, use CSRF protections where relevant, and never put private keys in `VITE_*` environment variables.
 
 ## Motion and accessibility
