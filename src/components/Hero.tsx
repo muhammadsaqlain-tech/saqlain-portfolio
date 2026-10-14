@@ -10,7 +10,7 @@ import Magnetic from "./Magnetic";
 // Easing that feels hand-tuned: fast start, soft landing.
 const EASE = [0.2, 0.7, 0.2, 1] as const;
 
-const ROLES = ["Python developer", "Cloud engineer", "Linux", "Networking"];
+const ROLES = ["Aspiring cloud engineer", "Python developer", "C# / .NET developer"];
 
 export default function Hero() {
   const reduce = useReducedMotion();
