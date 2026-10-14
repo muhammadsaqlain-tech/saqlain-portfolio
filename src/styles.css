@@ -15,6 +15,9 @@
   --line-strong: rgba(201, 218, 243, .22);
   --accent: #60a5fa;
   --accent-strong: #3286f6;
+  --avail-ink: #86efac;
+  --avail-bg: rgba(34, 197, 94, .1);
+  --avail-line: rgba(34, 197, 94, .3);
   --accent-soft: rgba(96, 165, 250, .12);
   --accent-2: #a78bfa; /* secondary accent, used sparingly for gradients and glows */
   --green: #55d6a1;
@@ -37,6 +40,9 @@
   --line-strong: rgba(21, 32, 51, .18);
   --accent: #2563eb;
   --accent-strong: #1d4ed8;
+  --avail-ink: #15803d;
+  --avail-bg: #f0fdf4;
+  --avail-line: #bbf7d0;
   --accent-soft: rgba(37, 99, 235, .09);
   --accent-2: #7c3aed;
   --green: #138c67;
@@ -286,7 +292,7 @@ img { display: block; max-width: 100%; }
 
 
 
-.hero-availability { display: inline-flex; align-items: center; gap: 8px; margin: 14px 0 0; padding: 8px 16px; font-size: .82rem; font-weight: 600; color: #15803d; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 999px; }
+.hero-availability { display: inline-flex; align-items: center; gap: 8px; margin: 14px 0 0; padding: 8px 16px; font-size: .82rem; font-weight: 600; color: var(--avail-ink); background: var(--avail-bg); border: 1px solid var(--avail-line); border-radius: 999px; }
 .availability-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; animation: pulse-dot 2s ease-in-out infinite; }
 @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: .4; } }
 
@@ -295,6 +301,8 @@ img { display: block; max-width: 100%; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
 
+
+.cert-id { display: block; margin-top: 4px; font-family: ui-monospace, monospace; font-size: .72rem; color: var(--faint); }
 
 /* Journey */
 .journey-layout { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(45px, 8vw, 115px); align-items: start; }

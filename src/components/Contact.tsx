@@ -1,4 +1,5 @@
-import { FiArrowUpRight, FiGithub, FiLinkedin, FiMail, FiMapPin, FiSend } from "react-icons/fi";
+import { useState } from "react";
+import { FiArrowUpRight, FiCheck, FiCopy, FiGithub, FiLinkedin, FiMail, FiMapPin, FiSend } from "react-icons/fi";
 import SectionHeading from "./SectionHeading";
 import { profile } from "../data/portfolio";
 
@@ -8,6 +9,14 @@ export default function Contact() {
   const subject = encodeURIComponent("Portfolio contact — Muhammad Saqlain");
   const body = encodeURIComponent("Hi Saqlain,\n\nI’m reaching out about...");
   const mailto = `mailto:${profile.email}`;
+  const [copied, setCopied] = useState(false);
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(profile.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch { /* clipboard unavailable */ }
+  };
   return (
     <section className="section-shell section-light" id="contact">
       <div className="wrap">
@@ -16,9 +25,10 @@ export default function Contact() {
           <div className="contact-intro reveal">
             <span className="contact-symbol"><FiSend /></span>
             <h3>Have something in mind?</h3>
-            <p>Share a little context and I’ll get back to you when I can. This button opens Gmail; this static site does not store messages.</p>
+            <p>Share a little context and I’ll get back to you when I can. This button opens your mail app; this static site does not store messages.</p>
             <div className="contact-actions">
               <a className="button button-primary" href={`${mailto}?subject=${subject}&body=${body}`}>Write an email <FiArrowUpRight /></a>
+              <button className="button button-secondary" onClick={copyEmail} type="button">{copied ? <><FiCheck /> Copied!</> : <><FiCopy /> Copy email</>}</button>
               <a className="button button-secondary" href={profile.resume} target="_blank" rel="noreferrer"><FiArrowUpRight /> Resume</a>
             </div>
           </div>

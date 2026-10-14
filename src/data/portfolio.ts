@@ -39,7 +39,7 @@ export const profile = {
   role: "Aspiring Cloud Engineer",
   email: "muhammadsaqlain4787@gmail.com",
   location: "Faisalabad, Pakistan",
-  github: "",
+  github: "https://github.com/muhammadsaqlain-tech",
   linkedin: "https://linkedin.com/in/muhammadsaqlain-tech",
   availability: "Available for remote internships",
   resume: "/saqlain-resume.pdf", // real resume, served from public/ — update the file there to change it
@@ -50,6 +50,7 @@ export type Certification = {
   title: string;
   year: string;
   url: string;
+  credentialId: string;
 };
 
 export const certifications: Certification[] = [
@@ -58,12 +59,14 @@ export const certifications: Certification[] = [
     title: "Technical Support Fundamentals",
     year: "2026",
     url: "https://coursera.org/verify/YG0T0H0NZ019",
+    credentialId: "YG0T0H0NZ019",
   },
   {
     issuer: "Johns Hopkins University",
     title: "HTML, CSS & JavaScript for Web Developers",
     year: "2026",
     url: "https://coursera.org/verify/5JKNPKEJN7OV",
+    credentialId: "5JKNPKEJN7OV",
   },
 ];
 

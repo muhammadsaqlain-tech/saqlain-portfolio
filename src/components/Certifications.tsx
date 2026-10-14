@@ -25,6 +25,7 @@ export default function Certifications() {
               <div>
                 <strong>{cert.issuer}</strong>
                 <span>{cert.title} ({cert.year})</span>
+                <code className="cert-id">ID: {cert.credentialId}</code>
               </div>
               <FiArrowUpRight className="cert-card-arrow" aria-hidden="true" />
             </motion.a>
