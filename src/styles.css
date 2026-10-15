@@ -510,5 +510,5 @@ a.contact-detail:hover .contact-detail-arrow { transform: translate(3px, -3px); 
   .project-visual { height: 110px; }
 }
 
-/* Reserved space while a lazily loaded section streams in (Phase 7). */
+/* Holds space while a lazy section loads. */
 .section-fallback { min-height: 420px; }

@@ -6,8 +6,7 @@ import Marquee from "./components/Marquee";
 import About from "./components/About";
 import Footer from "./components/Footer";
 
-// Below-the-fold sections load on demand so the first paint ships less JS.
-// The fallback reserves vertical space to keep layout shift minimal.
+// Lazy-load the sections below the fold; the fallback holds their space.
 const Skills = lazy(() => import("./components/Skills"));
 const Certifications = lazy(() => import("./components/Certifications"));
 const Projects = lazy(() => import("./components/Projects"));
@@ -24,9 +23,8 @@ export default function App() {
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 28, restDelta: 0.001 });
   useEffect(() => {
     document.documentElement.classList.add("motion-ready");
-    // Sections below the fold are lazily loaded, so .reveal nodes can appear
-    // after this effect runs. A MutationObserver keeps watching for them,
-    // otherwise their headings would stay at opacity 0 forever.
+    // Lazy sections mount later, so keep watching for new .reveal nodes too —
+    // unobserved ones would stay invisible (opacity 0 until .in-view).
     const findReveals = (root: Node): HTMLElement[] => {
       const found: HTMLElement[] = [];
       if (root instanceof HTMLElement && root.classList.contains("reveal")) found.push(root);
