@@ -67,6 +67,7 @@ saqlain-portfolio/
 │   └── styles.css                 # design tokens + polish-pass section at the end
 ├── index.html
 ├── package.json
+├── eslint.config.js
 ├── tsconfig*.json
 ├── vercel.json                  # security headers for Vercel
 └── vite.config.ts

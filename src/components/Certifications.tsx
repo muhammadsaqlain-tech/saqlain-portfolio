@@ -15,7 +15,7 @@ export default function Certifications() {
               className="cert-card reveal"
               href={cert.url}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noreferrer"
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
