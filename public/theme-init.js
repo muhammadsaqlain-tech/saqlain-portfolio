@@ -1,6 +1,4 @@
-// Applies the saved (or system) theme before first paint so light-theme
-// visitors never see a dark flash. Runs as a classic script in <head>;
-// keep the key and fallback in sync with Navbar's theme toggle.
+// Apply the saved theme before first paint, otherwise light mode flashes dark.
 (function () {
   try {
     var saved = null;
