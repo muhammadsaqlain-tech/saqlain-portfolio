@@ -13,18 +13,18 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [light, setLight] = useState(false);
+  const [light, setLight] = useState(() => {
+    let saved: string | null = null;
+    try { saved = localStorage.getItem("saqlain-theme"); } catch { /* private mode */ }
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+    return saved ? saved === "light" : prefersLight;
+  });
   const [active, setActive] = useState("home");
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    let saved: string | null = null;
-    try { saved = localStorage.getItem("saqlain-theme"); } catch { /* private mode */ }
-    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-    const next = saved ? saved === "light" : prefersLight;
-    setLight(next);
-    document.documentElement.dataset.theme = next ? "light" : "dark";
-  }, []);
+    document.documentElement.dataset.theme = light ? "light" : "dark";
+  }, [light]);
 
   useEffect(() => {
     const sections = ["home", "about", "skills", "certifications", "projects", "journey", "contact"]
