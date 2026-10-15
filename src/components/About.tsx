@@ -22,11 +22,11 @@ export default function About() {
           <div className="about-pic about-spotlight" ref={picRef} onMouseMove={handleSpot}>
             <picture>
               <source srcSet={portraitWebp} type="image/webp" />
-              <img className="spot-bw" src={portrait} alt="Portrait of Muhammad Saqlain" loading="lazy" />
+              <img className="spot-bw" src={portrait} alt="Portrait of Muhammad Saqlain" loading="lazy" decoding="async" width={800} height={903} />
             </picture>
             <picture aria-hidden="true">
               <source srcSet={portraitWebp} type="image/webp" />
-              <img className="spot-color" src={portrait} alt="" />
+              <img className="spot-color" src={portrait} alt="" loading="lazy" decoding="async" width={800} height={903} />
             </picture>
           </div>
           <motion.div

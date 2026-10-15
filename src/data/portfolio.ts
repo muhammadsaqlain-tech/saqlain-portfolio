@@ -70,12 +70,6 @@ export const certifications: Certification[] = [
   },
 ];
 
-export type Service = {
-  title: string;
-  detail: string;
-  icon: string;
-};
-
 export const skills: Skill[] = [
   { name: "Python", detail: "Scripting", category: "Comfortable", icon: "python" },
   { name: "C#", detail: ".NET / WinForms", category: "Comfortable", icon: "csharp" },

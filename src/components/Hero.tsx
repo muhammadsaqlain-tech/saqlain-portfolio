@@ -86,7 +86,7 @@ export default function Hero() {
           <div className="portrait-frame">
             <picture>
               <source srcSet={portraitWebp} type="image/webp" />
-              <img src={portrait} alt="Portrait of Muhammad Saqlain" fetchPriority="high" />
+              <img src={portrait} alt="Portrait of Muhammad Saqlain" fetchPriority="high" width={800} height={903} />
             </picture>
           </div>
           <div className="orbit orbit-one" />

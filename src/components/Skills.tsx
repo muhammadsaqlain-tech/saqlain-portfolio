@@ -7,15 +7,11 @@ import { skills, type Skill } from "../data/portfolio";
 // Official brand logos, bundled locally (devicons) so they never depend on a CDN.
 import pythonLogo from "../assets/icons/python.svg";
 import csharpLogo from "../assets/icons/csharp.svg";
-import cplusplusLogo from "../assets/icons/cplusplus.svg";
 import sqlserverLogo from "../assets/icons/sqlserver.svg";
-import bashLogo from "../assets/icons/bash.svg";
 import html5Logo from "../assets/icons/html5.svg";
 import css3Logo from "../assets/icons/css3.svg";
 import linuxLogo from "../assets/icons/linux.svg";
 import gitLogo from "../assets/icons/git.svg";
-import dotnetLogo from "../assets/icons/dotnet.svg";
-import vscodeLogo from "../assets/icons/vscode.svg";
 import awsLogo from "../assets/icons/aws.svg";
 
 const categories = ["All", "Comfortable", "Learning now"] as const;
@@ -25,13 +21,9 @@ const categories = ["All", "Comfortable", "Learning now"] as const;
 const skillLogos: Record<string, string> = {
   python: pythonLogo,
   csharp: csharpLogo,
-  cplusplus: cplusplusLogo,
   sqlserver: sqlserverLogo,
-  bash: bashLogo,
   linux: linuxLogo,
   git: gitLogo,
-  dotnet: dotnetLogo,
-  vscode: vscodeLogo,
   aws: awsLogo,
 };
 
@@ -66,9 +58,9 @@ export default function Skills() {
       <div className="wrap">
         <SectionHeading title={<>Skills</>} description="Grouped by how well I know them." />
         <div className="skill-toolbar reveal">
-          <div className="filter-tabs" role="tablist" aria-label="Filter skills">
+          <div className="filter-tabs" role="group" aria-label="Filter skills">
             {categories.map((category) => (
-              <button key={category} role="tab" aria-selected={selected === category} className={selected === category ? "filter-tab selected" : "filter-tab"} onClick={() => setSelected(category)}>{category}</button>
+              <button key={category} type="button" aria-pressed={selected === category} className={selected === category ? "filter-tab selected" : "filter-tab"} onClick={() => setSelected(category)}>{category}</button>
             ))}
           </div>
           <span className="skill-count">{String(visible.length).padStart(2, "0")} technologies / topics</span>
