@@ -19,9 +19,9 @@ export default function Hero() {
 
 
 
-  const [displayText, setDisplayText] = useState("");
+  const [displayText, setDisplayText] = useState(() => (reduce ? ROLES[0] : ""));
   useEffect(() => {
-    if (reduce) { setDisplayText(ROLES[0]); return; }
+    if (reduce) return;
     let roleIdx = 0, charIdx = 0, deleting = false;
     let timeout: ReturnType<typeof setTimeout>;
     const tick = () => {
