@@ -1,0 +1,38 @@
+# Muhammad Saqlain
+
+> Aspiring cloud engineer and Computer Science undergraduate based in Faisalabad, Pakistan. This is his personal portfolio: projects, skills, certifications and resume. Available for remote internships.
+
+Muhammad Saqlain is an undergraduate student at the University of Agriculture, Faisalabad (2024 — present). He is building a foundation for cloud engineering through Linux, networking (CCNA level) and AWS, alongside hands-on personal projects in Python and C#/.NET.
+
+## Main pages
+
+- [Portfolio home](https://muhammadsaqlain.net/): About, skills, projects, certifications, journey and contact — all on one page
+- [Resume (PDF)](https://muhammadsaqlain.net/saqlain-resume.pdf): Current resume
+
+## Skills
+
+- Comfortable: Python (scripting), C# (.NET / WinForms), SQL, HTML/CSS, Git, Linux fundamentals
+- Learning now: AWS (SAA theory), Networking (CCNA)
+
+## Projects
+
+- PhishGuard: Static file-intelligence toolkit in Python/JavaScript. Shows SHA-256, MD5 and SHA-1 hashes, real file type and PDF red flags without running the file. Findings export as a PDF analyst report. Featured project, in progress.
+- FastFoodPOS: Windows restaurant POS and management app in C#/.NET 8 and WinForms with SQL Server — order billing, menu and inventory tracking, sales reporting.
+- [Student Management System](https://github.com/muhammadsaqlain-tech/student-management-system): Student records system in C#/.NET WinForms with course enrolment, attendance, marks and results. XML-based storage and full CRUD.
+- Web Application Security Assessments: Authorized, passive assessments of live web apps — stack enumeration, security header and HTTPS findings, with remediation reports.
+- Personal Finance Management System: Income and expense tracker in C#/.NET WinForms with SQL Server — category-wise budgeting, monthly summaries and spending reports.
+
+## Certifications
+
+- [Technical Support Fundamentals — Google (2026)](https://coursera.org/verify/YG0T0H0NZ019)
+- [HTML, CSS & JavaScript for Web Developers — Johns Hopkins University (2026)](https://coursera.org/verify/5JKNPKEJN7OV)
+
+## Profiles
+
+- [GitHub](https://github.com/muhammadsaqlain-tech)
+- [LinkedIn](https://linkedin.com/in/muhammadsaqlain-tech)
+
+## Contact
+
+- Email: muhammadsaqlain4787@gmail.com
+- Location: Faisalabad, Pakistan
