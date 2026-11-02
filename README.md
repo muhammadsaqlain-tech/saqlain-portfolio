@@ -39,8 +39,10 @@ saqlain-portfolio/
 ├── public/
 │   ├── 404.html
 │   ├── favicon.svg
+│   ├── llms.txt
 │   ├── og-image.jpg
 │   ├── robots.txt
+│   ├── theme-init.js
 │   ├── saqlain-resume.pdf        # real resume, served as a download
 │   └── sitemap.xml
 ├── src/
