@@ -98,6 +98,7 @@ export const projects: Project[] = [
       "I built a Windows restaurant POS and management app. It handles order billing, menu and inventory tracking, and sales reporting on a SQL Server backend.",
     tags: ["C#", ".NET 8", "WinForms", "SQL Server"],
     visual: "pos",
+    href: "https://github.com/muhammadsaqlain-tech/FastFoodPOS",
   },
   {
     number: "03",
