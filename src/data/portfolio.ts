@@ -68,6 +68,13 @@ export const certifications: Certification[] = [
     url: "https://coursera.org/verify/5JKNPKEJN7OV",
     credentialId: "5JKNPKEJN7OV",
   },
+  {
+    issuer: "IBM",
+    title: "Hands-on Introduction to Linux Commands and Shell Scripting",
+    year: "2026",
+    url: "https://coursera.org/verify/B0YRWQ8K7AV8",
+    credentialId: "B0YRWQ8K7AV8",
+  },
 ];
 
 export const skills: Skill[] = [
