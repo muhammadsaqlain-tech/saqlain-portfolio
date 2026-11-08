@@ -72,8 +72,8 @@ export const certifications: Certification[] = [
     issuer: "IBM",
     title: "Hands-on Introduction to Linux Commands and Shell Scripting",
     year: "2026",
-    url: "https://coursera.org/verify/B0YRWQ8K7AV8",
-    credentialId: "B0YRWQ8K7AV8",
+    url: "https://coursera.org/verify/B0YRWSR97AV8",
+    credentialId: "B0YRWSR97AV8",
   },
 ];
 
