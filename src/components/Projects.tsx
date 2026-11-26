@@ -20,7 +20,7 @@ export default function Projects() {
       <div className="wrap">
         <SectionHeading eyebrow="Selected work" title={<>Projects</>} description="A selection of practical work and experiments. Descriptions focus on what each project does rather than inflated claims." />
         {featured && (
-          <motion.article className="featured-project reveal" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }}>
+          <motion.article className="featured-project reveal" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
             <div className="featured-project-copy">
               <div className="project-label"><span className="project-label-dot" /> FEATURED PROJECT <span>01 / 05</span></div>
               <h3>{featured.name}<span className="title-period">.</span></h3>
@@ -54,7 +54,7 @@ export default function Projects() {
         )}
         <div className="project-grid">
           {others.map((project, index) => (
-            <motion.article className="project-card reveal" key={project.name} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }} transition={{ delay: index * 0.07 }}>
+            <motion.article className="project-card reveal" key={project.name} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.8, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}>
               {/* Decorative cover art — abstract, never a fake screenshot */}
               {project.visual && (
                 <div className={`project-visual pv-${project.visual}`} aria-hidden="true">
